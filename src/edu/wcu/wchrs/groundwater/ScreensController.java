@@ -38,7 +38,7 @@
  * holder.
  */
 
-package sample;
+package edu.wcu.wchrs.groundwater;
 
 import java.util.HashMap;
 import javafx.animation.KeyFrame;

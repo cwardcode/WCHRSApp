@@ -1,4 +1,4 @@
-package sample;
+package edu.wcu.wchrs.groundwater;
 
 public abstract interface ControlledScreen
 {

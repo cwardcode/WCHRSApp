@@ -1,4 +1,4 @@
-package sample;
+package edu.wcu.wchrs.groundwater;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

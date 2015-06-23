@@ -1,4 +1,4 @@
- package sample;
+ package edu.wcu.wchrs.groundwater;
  
  import java.net.URL;
  import java.text.DateFormat;
@@ -9,7 +9,6 @@
  import javafx.fxml.FXML;
  import javafx.fxml.Initializable;
  import javafx.scene.control.Alert;
- import javafx.scene.control.Alert.AlertType;
  import javafx.scene.control.TextField;
  import javafx.scene.layout.GridPane;
  
