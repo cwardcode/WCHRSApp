@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EquipController">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="910.0" prefWidth="570.0">
+            <children>
+                <Button fx:id="contBtn" layoutX="247.0" layoutY="286.0" mnemonicParsing="false" onAction="#pressButton" text="Continue" />
+                <CheckBox fx:id="bucket" layoutX="216.0" layoutY="130.0" mnemonicParsing="false" text="Bucket" />
+                <CheckBox fx:id="tape" layoutX="216.0" layoutY="185.0" mnemonicParsing="false" text="Water Level Tape" />
+                <CheckBox fx:id="key" layoutX="216.0" layoutY="213.0" mnemonicParsing="false" text="Well Key" />
+                <CheckBox fx:id="ruler" layoutX="216.0" layoutY="157.0" mnemonicParsing="false" text="Folding Ruler" />
+                <Label alignment="CENTER" layoutX="143.0" layoutY="68.0" text="Equipment Checklist" textAlignment="CENTER">
+                   <font>
+                      <Font size="26.0" />
+                   </font>
+                </Label>
+                <CheckBox fx:id="pen" layoutX="217.0" layoutY="242.0" mnemonicParsing="false" text="Pen to write with" />
+            </children>
+        </Pane>
+    </children>
+</GridPane>
