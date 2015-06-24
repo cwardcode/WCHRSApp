@@ -5,19 +5,16 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Screen;
 
 public class PrepController
         extends GridPane
         implements Initializable, ControlledScreen
 {
-  private Main application;
   @FXML
   private TextField nameFld;
   @FXML
@@ -41,7 +38,7 @@ public class PrepController
   }
 
   @FXML
-  public void pressButton(ActionEvent event) throws Exception {
+  public void pressButton() throws Exception {
     if (emptyFieldsExist()) {
       Alert alert = new Alert(Alert.AlertType.ERROR);
       alert.setTitle("Error: Empty Fields");
@@ -75,9 +72,6 @@ public class PrepController
     return areFieldsEmpty;
   }
 
-  public void setApp(Main app) {
-    this.application = app;
-  }
 
   public void setScreenParent(ScreensController screenParent)
   {

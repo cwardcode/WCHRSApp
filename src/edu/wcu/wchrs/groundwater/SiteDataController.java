@@ -5,14 +5,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 public class SiteDataController extends GridPane implements Initializable, ControlledScreen {
-    private Date curDate;
     private String emptyFields;
     private ScreensController controller;
     @FXML

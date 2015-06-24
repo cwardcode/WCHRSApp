@@ -73,18 +73,14 @@ public class ScreensController  extends StackPane {
         screens.put(name, screen);
     }
 
-    //Returns the Node with the appropriate name
-    public Node getScreen(String name) {
-        return screens.get(name);
-    }
 
     //Loads the fxml file, add the screen to the screens collection and
     //finally injects the screenPane to the controller.
     public boolean loadScreen(String name, String resource) {
         try {
             FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
-            Parent loadScreen = (Parent) myLoader.load();
-            ControlledScreen myScreenControler = ((ControlledScreen) myLoader.getController());
+            Parent loadScreen = myLoader.load();
+            ControlledScreen myScreenControler = myLoader.getController();
             myScreenControler.setScreenParent(this);
             addScreen(name, loadScreen);
             return true;
@@ -132,15 +128,5 @@ public class ScreensController  extends StackPane {
             return false;
         }
 
-    }
-
-    //This method will remove the screen with the given name from the collection of screens
-    public boolean unloadScreen(String name) {
-        if (screens.remove(name) == null) {
-            System.out.println("Screen didn't exist");
-            return false;
-        } else {
-            return true;
-        }
     }
 }

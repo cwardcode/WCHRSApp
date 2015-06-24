@@ -2,7 +2,6 @@
  
  import java.net.URL;
  import java.util.ResourceBundle;
- import javafx.event.ActionEvent;
  import javafx.fxml.FXML;
  import javafx.fxml.Initializable;
  import javafx.scene.control.Alert;
@@ -36,7 +35,7 @@
    public void initialize(URL location, ResourceBundle resources) {}
    
    @FXML
-   public void pressButton(ActionEvent event)
+   public void pressButton()
      throws Exception
    {
      if (emptyFieldsExist()) {

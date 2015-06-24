@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -15,7 +14,7 @@ import javafx.scene.layout.GridPane;
 
 
 public class WellController extends GridPane implements Initializable, ControlledScreen {
-
+    private String regex = "[0-9]+([,.][0-9]{1,2})?";
     @FXML
     private TextField gg1SFld;
     @FXML
@@ -69,7 +68,7 @@ public class WellController extends GridPane implements Initializable, Controlle
     @FXML
     private TextField gg4DHist;
     @FXML
-    private TextArea wellNotes;
+    private TextArea wellNotesFld;
 
     private String emptyFields;
     private ScreensController controller;
@@ -84,10 +83,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg1SFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg1SFld.getText().isEmpty() && gg1SFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg1SFld.getText().isEmpty() && gg1SFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg1SFld.getText());
                     String[] range = gg1SHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -104,10 +102,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg1IFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg1IFld.getText().isEmpty() && gg1IFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg1IFld.getText().isEmpty() && gg1IFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg1IFld.getText());
                     String[] range = gg1IHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -124,10 +121,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg1DFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg1DFld.getText().isEmpty() && gg1DFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg1DFld.getText().isEmpty() && gg1DFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg1DFld.getText());
                     String[] range = gg1DHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -144,10 +140,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg1DLongFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg1DLongFld.getText().isEmpty() && gg1DLongFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg1DLongFld.getText().isEmpty() && gg1DLongFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg1DLongFld.getText());
                     String[] range = gg1DLongHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -164,10 +159,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg2SFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg2SFld.getText().isEmpty() && gg2SFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg2SFld.getText().isEmpty() && gg2SFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg2SFld.getText());
                     String[] range = gg2SHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -184,10 +178,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg2IFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg2IFld.getText().isEmpty() && gg2IFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg2IFld.getText().isEmpty() && gg2IFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg2IFld.getText());
                     String[] range = gg2IHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -204,10 +197,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg2DFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg2DFld.getText().isEmpty() && gg2DFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg2DFld.getText().isEmpty() && gg2DFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg2DFld.getText());
                     String[] range = gg2DHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -224,10 +216,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg3SFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg3SFld.getText().isEmpty() && gg3SFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg3SFld.getText().isEmpty() && gg3SFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg3SFld.getText());
                     String[] range = gg3SHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -244,10 +235,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg3IFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg3IFld.getText().isEmpty() && gg3IFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg3IFld.getText().isEmpty() && gg3IFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg3IFld.getText());
                     String[] range = gg3IHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -264,10 +254,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg3DFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg3DFld.getText().isEmpty() && gg3DFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg3DFld.getText().isEmpty() && gg3DFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg3DFld.getText());
                     String[] range = gg3DHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -284,10 +273,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg4SFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg4SFld.getText().isEmpty() && gg4SFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg4SFld.getText().isEmpty() && gg4SFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg4SFld.getText());
                     String[] range = gg4SHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -304,10 +292,9 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg4IFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else
+                if (!newValue)
                 {
-                    if (!gg4IFld.getText().isEmpty() && gg4IFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                    if (!gg4IFld.getText().isEmpty() && gg4IFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg4IFld.getText());
                     String[] range = gg4IHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
@@ -324,9 +311,8 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg4DFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (newValue) {}
-                else {
-                    if (!gg4DFld.getText().isEmpty() && gg4DFld.getText().matches("/^\\d*\\.?\\d*$/")) {
+                if (!newValue) {
+                    if (!gg4DFld.getText().isEmpty() && gg4DFld.getText().matches(regex)) {
                         double enteredData = Double.parseDouble(gg4DFld.getText());
                         String[] range = gg4DHist.getText().split("-");
                         if (enteredData < Double.parseDouble(range[0].trim())
@@ -350,7 +336,7 @@ public class WellController extends GridPane implements Initializable, Controlle
         alert.showAndWait();
     }
     @FXML
-    public void pressButton(ActionEvent event)
+    public void pressButton()
             throws Exception
     {
         if (emptyFieldsExist()) {
@@ -365,10 +351,6 @@ public class WellController extends GridPane implements Initializable, Controlle
         }
     }
 
-    private boolean isDataValid() {
-       boolean validData = true;
-        return validData;
-    }
     private boolean emptyFieldsExist()
     {
         boolean areFieldsEmpty = false;
@@ -424,6 +406,11 @@ public class WellController extends GridPane implements Initializable, Controlle
         }
         if(this.gg4DFld.getText().isEmpty()) {
             emptyFields = emptyFields + "GG4D\n";
+            areFieldsEmpty = true;
+        }
+        if(this.wellNotesFld.getText().isEmpty()) {
+            emptyFields = emptyFields + "Well Notes\n";
+            wellNotesFld.setEditable(true);
             areFieldsEmpty = true;
         }
 
