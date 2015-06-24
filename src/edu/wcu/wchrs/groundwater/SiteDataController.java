@@ -25,8 +25,6 @@ public class SiteDataController extends GridPane implements Initializable, Contr
     @FXML
     private TextField stage;
     @FXML
-    private ToggleGroup rg1Level;
-    @FXML
     private RadioButton rg1LevelYes;
     @FXML
     private RadioButton rg1LevelNo;
@@ -34,10 +32,6 @@ public class SiteDataController extends GridPane implements Initializable, Contr
     private RadioButton rg2LevelYes;
     @FXML
     private RadioButton rg2LevelNo;
-    @FXML
-    private ToggleGroup rg2Level;
-    @FXML
-    private ToggleGroup rg1Battery;
     @FXML
     private RadioButton rg1battOK;
     @FXML
@@ -51,8 +45,6 @@ public class SiteDataController extends GridPane implements Initializable, Contr
     @FXML
     private TextField rg2CondFld;
     @FXML
-    private ToggleGroup rg2Battery;
-    @FXML
     private RadioButton rg2BattDead;
     @FXML
     private RadioButton rg2BattOK;
@@ -61,7 +53,7 @@ public class SiteDataController extends GridPane implements Initializable, Contr
 
 
     @FXML
-    public void pressButton(ActionEvent event) throws Exception
+    public void pressButton() throws Exception
     {
         if (emptyFieldsExist()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -104,6 +96,45 @@ public class SiteDataController extends GridPane implements Initializable, Contr
         }
         if (this.stage.getText().isEmpty()) {
             this.emptyFields += "Stage\n";
+            areFieldsEmpty = true;
+        }
+        if(!(this.rg1LevelYes.isSelected() || this.rg1LevelNo.isSelected())) {
+           this.emptyFields = emptyFields + "Rain Gauge 1 Level\n";
+           areFieldsEmpty = true;
+        }
+
+        if(!(this.rg1battOK.isSelected() || this.rg1battDead.isSelected())) {
+           this.emptyFields = emptyFields + "Rain Gauge 1 Battery\n";
+           areFieldsEmpty = true;
+        }
+
+        if(this.rg1CondFld.getText().isEmpty()) {
+            this.emptyFields = emptyFields + "Rain Gauge 1 Condition\n";
+            areFieldsEmpty = true;
+        }
+
+        if(this.rg1NotesFld.getText().isEmpty()) {
+            this.emptyFields = emptyFields + "Rain Gauge 1 Notes\n";
+            areFieldsEmpty = true;
+        }
+
+        if(!(this.rg2LevelYes.isSelected() || this.rg2LevelNo.isSelected())) {
+           this.emptyFields = emptyFields + "Rain Gauge 2 Level\n";
+           areFieldsEmpty = true;
+        }
+
+        if(!(this.rg2BattOK.isSelected() || this.rg2BattDead.isSelected())) {
+           this.emptyFields = emptyFields + "Rain Gauge 2 Battery\n";
+           areFieldsEmpty = true;
+        }
+
+        if(this.rg2CondFld.getText().isEmpty()) {
+            this.emptyFields = emptyFields + "Rain Gauge 2 Condition\n";
+            areFieldsEmpty = true;
+        }
+
+        if(this.rg2NotesFld.getText().isEmpty()) {
+            this.emptyFields = emptyFields + "Rain Gauge 2 Notes\n";
             areFieldsEmpty = true;
         }
         if (this.siteNotesFld.getText().isEmpty()) {

@@ -12,10 +12,11 @@ public class Main extends javafx.application.Application {
     private final double MINIMUM_WINDOW_HEIGHT = 500.0D;
     private final double MINIMUM_WINDOW_WIDTH = 300.0D;
     private Stage stage;
-    public static String screen1ID = "General Data";
-    public static String screen1File = "GeneralData.fxml";
-    public static String screen2ID = "Equipment Checklist";
-    public static String screen2File = "EquipList.fxml";
+
+    public static String screen1ID = "Equipment Checklist";
+    public static String screen1File = "EquipList.fxml";
+    public static String screen2ID = "General Data";
+    public static String screen2File = "GeneralData.fxml";
     public static String screen3ID = "Site Data";
     public static String screen3File = "SiteData.fxml";
     public static String screen4ID = "Well Data";
@@ -27,7 +28,6 @@ public class Main extends javafx.application.Application {
         screens.loadScreen(screen2ID, screen2File);
         screens.loadScreen(screen3ID, screen3File);
         screens.loadScreen(screen4ID, screen4File);
-
 
         screens.setScreen(screen1ID);
 

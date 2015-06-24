@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="javafx" build-on-make="true" name="WCHRSApp">
+  <artifact type="javafx" name="WCHRSApp">
     <output-path>$PROJECT_DIR$/out/artifacts/WCHRSApp</output-path>
     <properties id="javafx-properties">
       <options>
