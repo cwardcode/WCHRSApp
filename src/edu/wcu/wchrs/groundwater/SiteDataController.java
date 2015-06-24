@@ -1,6 +1,9 @@
 package edu.wcu.wchrs.groundwater;
 
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 public class SiteDataController extends GridPane implements Initializable, ControlledScreen {
-
+    private Date curDate;
     private String emptyFields;
     private ScreensController controller;
     @FXML
@@ -66,9 +69,6 @@ public class SiteDataController extends GridPane implements Initializable, Contr
             this.controller.setScreen(Main.screen4ID);
         }
     }
-
-
-
 
     private boolean emptyFieldsExist()
     {
@@ -150,5 +150,14 @@ public class SiteDataController extends GridPane implements Initializable, Contr
         this.controller = screenPage;
     }
 
-    public void initialize(URL location, ResourceBundle resources) {}
+    public void initialize(URL location, ResourceBundle resources) {
+        this.timeOfArrivalFld.setText(getCurrentTime());
+        this.timeOfArrivalFld.setDisable(true);
+        this.timeOfArrivalFld.setEditable(false);
+    }
+
+    public String getCurrentTime() {
+        DateFormat dateFormat = new SimpleDateFormat("hh:mm a");
+        return dateFormat.format(new Date());
+    }
 }

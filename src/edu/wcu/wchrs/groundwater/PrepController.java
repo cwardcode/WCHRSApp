@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Screen;
 
 public class PrepController
         extends GridPane
@@ -49,7 +50,8 @@ public class PrepController
       alert.showAndWait();
     }
     else {
-      this.myController.setScreen(Main.screen2ID);
+      myController.loadScreen("site data", "SiteData.fxml");
+      myController.setScreen("site data");
     }
   }
 

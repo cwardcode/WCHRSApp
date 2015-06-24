@@ -47,7 +47,7 @@
        alert.showAndWait();
      }
      else {
-       this.controller.setScreen(Main.screen3ID);
+       this.controller.setScreen(Main.screen2ID);
      }
    }
 
