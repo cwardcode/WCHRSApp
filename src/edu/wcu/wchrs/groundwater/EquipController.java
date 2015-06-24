@@ -50,9 +50,7 @@
        this.controller.setScreen(Main.screen3ID);
      }
    }
-   
- 
- 
+
    private boolean emptyFieldsExist()
    {
      boolean areFieldsEmpty = false;
@@ -61,15 +59,15 @@
        this.emptyFields += "Bucket\n";
        areFieldsEmpty = true;
      }
-     if (!this.tape.isSelected()) {
+     if (!this.ruler.isSelected()) {
        this.emptyFields += "Folding Ruler\n";
        areFieldsEmpty = true;
      }
-     if (!this.key.isSelected()) {
+     if (!this.tape.isSelected()) {
        this.emptyFields += "Water Level Tape\n";
        areFieldsEmpty = true;
      }
-     if (!this.ruler.isSelected()) {
+     if (!this.key.isSelected()) {
        this.emptyFields += "Well Key\n";
        areFieldsEmpty = true;
      }

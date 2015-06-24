@@ -16,17 +16,17 @@
     <children>
         <Pane prefHeight="910.0" prefWidth="570.0">
             <children>
-                <Button fx:id="contBtn" layoutX="247.0" layoutY="286.0" mnemonicParsing="false" onAction="#pressButton" text="Continue" />
                 <CheckBox fx:id="bucket" layoutX="216.0" layoutY="130.0" mnemonicParsing="false" text="Bucket" />
+                <CheckBox fx:id="ruler" layoutX="216.0" layoutY="157.0" mnemonicParsing="false" text="Folding Ruler" />
                 <CheckBox fx:id="tape" layoutX="216.0" layoutY="185.0" mnemonicParsing="false" text="Water Level Tape" />
                 <CheckBox fx:id="key" layoutX="216.0" layoutY="213.0" mnemonicParsing="false" text="Well Key" />
-                <CheckBox fx:id="ruler" layoutX="216.0" layoutY="157.0" mnemonicParsing="false" text="Folding Ruler" />
+                <CheckBox fx:id="pen" layoutX="217.0" layoutY="242.0" mnemonicParsing="false" text="Pen to write with" />
                 <Label alignment="CENTER" layoutX="143.0" layoutY="68.0" text="Equipment Checklist" textAlignment="CENTER">
                    <font>
                       <Font size="26.0" />
                    </font>
                 </Label>
-                <CheckBox fx:id="pen" layoutX="217.0" layoutY="242.0" mnemonicParsing="false" text="Pen to write with" />
+                <Button  layoutX="247.0" layoutY="286.0" mnemonicParsing="false" onAction="#pressButton" text="Continue" />
             </children>
         </Pane>
     </children>

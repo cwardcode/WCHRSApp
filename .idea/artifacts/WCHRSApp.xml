@@ -14,7 +14,7 @@
     </properties>
     <root id="root">
       <element id="module-output" name="WCHRSApp" />
-      <element id="archive" name="archive.jar">
+      <element id="archive" name="WCHRSApp.jar">
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
         </element>

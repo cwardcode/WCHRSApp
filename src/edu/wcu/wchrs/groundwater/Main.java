@@ -16,14 +16,18 @@ public class Main extends javafx.application.Application {
     public static String screen1File = "GeneralData.fxml";
     public static String screen2ID = "Equipment Checklist";
     public static String screen2File = "EquipList.fxml";
-    public static String screen3ID = "Well Data";
-    public static String screen3File = "WellData.fxml";
+    public static String screen3ID = "Site Data";
+    public static String screen3File = "SiteData.fxml";
+    public static String screen4ID = "Well Data";
+    public static String screen4File = "WellData.fxml";
 
     public void start(Stage primaryStage) throws Exception {
         ScreensController screens = new ScreensController();
         screens.loadScreen(screen1ID, screen1File);
         screens.loadScreen(screen2ID, screen2File);
         screens.loadScreen(screen3ID, screen3File);
+        screens.loadScreen(screen4ID, screen4File);
+
 
         screens.setScreen(screen1ID);
 
