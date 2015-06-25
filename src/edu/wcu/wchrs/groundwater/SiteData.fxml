@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
@@ -15,18 +16,18 @@
     <children>
         <Pane prefHeight="910.0" prefWidth="570.0">
            <children>
-               <Label layoutX="147.0" layoutY="71.0" text="Site Name:" />
-               <TextField fx:id="siteName" layoutX="245.0" layoutY="66.0" text="Gribble Gap" />
-               <TextField fx:id="timeOfArrivalFld" layoutX="245.0" layoutY="99.0" />
-               <Label layoutX="119.0" layoutY="104.0" text="Time of Arrival:" />
+               <Label layoutX="147.0" layoutY="74.0" text="Site Name:" />
+               <TextField fx:id="siteName" disable="true" editable="false" layoutX="245.0" layoutY="66.0" text="Gribble Gap" />
+               <TextField fx:id="timeOfArrivalFld" disable="true" editable="false" layoutX="245.0" layoutY="99.0" />
+               <Label layoutX="119.0" layoutY="107.0" text="Time of Arrival:" />
                <TextField fx:id="distInside" layoutX="245.0" layoutY="132.0" promptText="TOC to stream bed" />
-               <Label layoutX="69.0" layoutY="168.0" text="Distance Outside (cm):" />
-               <TextField fx:id="distOutside" layoutX="245.0" layoutY="162.0" promptText="TOC to stream bed" />
-               <Label layoutX="27.0" layoutY="198.0" text="Distance of Staff Gauge (cm):" />
-               <TextField fx:id="distStaff" layoutX="245.0" layoutY="193.0" promptText="Top to stream bed" />
-               <Label layoutX="82.0" layoutY="138.0" text="Distance Inside (cm):" />
-               <Label layoutX="176.0" layoutY="227.0" text="Stage:" />
-               <TextField fx:id="stage" layoutX="245.0" layoutY="222.0" />
+               <Label layoutX="69.0" layoutY="171.0" text="Distance Outside (cm):" />
+               <TextField fx:id="distOutside" layoutX="245.0" layoutY="164.0" promptText="TOC to stream bed" />
+               <Label layoutX="27.0" layoutY="201.0" text="Distance of Staff Gauge (cm):" />
+               <TextField fx:id="distStaff" layoutX="245.0" layoutY="197.0" promptText="Top to stream bed" />
+               <Label layoutX="82.0" layoutY="141.0" text="Distance Inside (cm):" />
+               <Label layoutX="176.0" layoutY="232.0" text="Stage:" />
+               <TextField fx:id="stage" layoutX="245.0" layoutY="229.0" />
                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="218.0" layoutX="101.0" layoutY="265.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="369.0" />
                <Separator layoutX="285.0" layoutY="265.0" orientation="VERTICAL" prefHeight="218.0" prefWidth="6.0" />
                <Label layoutX="152.0" layoutY="265.0" text="Rain Gauge 1" />
@@ -77,7 +78,6 @@
                <TextField fx:id="rg1CondFld" layoutX="105.0" layoutY="350.0" prefHeight="31.0" prefWidth="170.0" />
                <Label layoutX="107.0" layoutY="380.0" text="Notes:" />
                <TextArea fx:id="rg1NotesFld" layoutX="105.0" layoutY="402.0" prefHeight="77.0" prefWidth="170.0" promptText="If no notes, type None" />
-               <TextArea fx:id="rg2NotesFld" layoutX="292.0" layoutY="402.0" prefHeight="77.0" prefWidth="170.0" promptText="If no notes, type None" />
                <Label layoutX="294.0" layoutY="380.0" text="Notes:" />
                <TextField fx:id="rg2CondFld" layoutX="292.0" layoutY="350.0" prefHeight="31.0" prefWidth="170.0" />
                <RadioButton fx:id="rg2BattDead" layoutX="393.0" layoutY="312.0" mnemonicParsing="false" text="Dead">
@@ -93,12 +93,23 @@
                        <Font size="12.0" />
                    </font>
                </RadioButton>
+               <TextArea fx:id="rg2NotesFld" layoutX="292.0" layoutY="402.0" prefHeight="77.0" prefWidth="170.0" promptText="If no notes, type None" />
                <Label layoutX="291.0" layoutY="309.0" text="Battery:" />
                <Label layoutX="292.0" layoutY="329.0" text="Condition:" />
-               <Label layoutX="102.0" layoutY="508.0" text="Site Notes:" />
-               <TextArea fx:id="siteNotesFld" layoutX="100.0" layoutY="529.0" prefHeight="133.0" prefWidth="369.0" promptText="If no notes, type none..." wrapText="true" />
-               <Button layoutX="250.0" layoutY="737.0" mnemonicParsing="false" onAction="#pressButton" text="Continue" />
+               <Label layoutX="103.0" layoutY="565.0" text="Site Notes:" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="59.0" layoutX="102.0" layoutY="505.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="369.0" />
+            <Label layoutX="102.0" layoutY="483.0" text="Rain Catchers (mm):" />
+            <Label layoutX="105.0" layoutY="524.0" text="1:" />
+            <TextField fx:id="ggRC1" layoutX="124.0" layoutY="519.0" prefHeight="31.0" prefWidth="60.0" />
+            <Label layoutX="195.0" layoutY="524.0" text="2:" />
+            <TextField fx:id="ggRC2" layoutX="217.0" layoutY="519.0" prefHeight="31.0" prefWidth="60.0" />
+            <Label layoutX="287.0" layoutY="524.0" text="3:" />
+            <TextField fx:id="ggRC3" layoutX="305.0" layoutY="519.0" prefHeight="31.0" prefWidth="60.0" />
+            <Label layoutX="370.0" layoutY="524.0" text="Avg:" />
+            <TextField fx:id="ggRCAvg" editable="false" disable="true" layoutX="406.0" layoutY="519.0" prefHeight="31.0" prefWidth="60.0" />
            </children>
+            <TextArea fx:id="siteNotesFld" layoutX="101.0" layoutY="586.0" prefHeight="133.0" prefWidth="369.0" promptText="If no notes, type none..." wrapText="true" />
+            <Button layoutX="250.0" layoutY="737.0" mnemonicParsing="false" onAction="#pressButton" text="Continue" />
         </Pane>
     </children>
 </GridPane>
