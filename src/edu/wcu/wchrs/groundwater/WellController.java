@@ -68,6 +68,18 @@ public class WellController extends GridPane implements Initializable, Controlle
     @FXML
     private TextField gg4DHist;
     @FXML
+    private TextField gg1TempFld;
+    @FXML
+    private TextField gg1CondFld;
+    @FXML
+    private TextField gg1PHFld;
+    @FXML
+    private TextField gg2TempFld;
+    @FXML
+    private TextField gg2CondFld;
+    @FXML
+    private TextField gg2PHFld;
+    @FXML
     private TextArea wellNotesFld;
 
     private String emptyFields;
@@ -93,8 +105,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -112,8 +123,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -131,8 +141,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -150,8 +159,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -169,8 +177,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                       showInputAlert();
                     }
                 }
             }
@@ -188,8 +195,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -207,8 +213,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -226,8 +231,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -245,8 +249,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -264,8 +267,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -283,7 +285,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
+                        showInputAlert();
                         System.out.println("Not A Number!!");
                     }
                 }
@@ -302,8 +304,7 @@ public class WellController extends GridPane implements Initializable, Controlle
                         showDataAlert();
                     }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
@@ -320,16 +321,21 @@ public class WellController extends GridPane implements Initializable, Controlle
                             showDataAlert();
                         }
                     } else {
-                        //ToDO display invalid data type box
-                        System.out.println("Not A Number!!");
+                        showInputAlert();
                     }
                 }
             }
         });
     }
-
-    public void showDataAlert() {
+    public void showInputAlert() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Warning: Invalid entry");
+        alert.setHeaderText("Invalid data entered");
+        alert.setContentText("Please only enter numbers and decimals.");
+        alert.showAndWait();
+    }
+    public void showDataAlert() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Warning: Possible erroneous data");
         alert.setHeaderText("Please ensure the data entered is correct");
         alert.setContentText("The entered data is out of the historic range, please be sure that it is correct.");
@@ -406,6 +412,30 @@ public class WellController extends GridPane implements Initializable, Controlle
         }
         if(this.gg4DFld.getText().isEmpty()) {
             emptyFields = emptyFields + "GG4D\n";
+            areFieldsEmpty = true;
+        }
+        if(this.gg1TempFld.getText().isEmpty()) {
+            emptyFields = emptyFields + "GG1 Multiprobe Temp\n";
+            areFieldsEmpty = true;
+        }
+        if(this.gg1CondFld.getText().isEmpty()) {
+            emptyFields = emptyFields + "GG1 Multiprobe Cond\n";
+            areFieldsEmpty = true;
+        }
+        if(this.gg1PHFld.getText().isEmpty()) {
+            emptyFields = emptyFields + "GG1 Multiprobe pH\n";
+            areFieldsEmpty = true;
+        }
+        if(this.gg2TempFld.getText().isEmpty()) {
+            emptyFields = emptyFields + "GG2 Multiprobe Temp\n";
+            areFieldsEmpty = true;
+        }
+        if(this.gg2CondFld.getText().isEmpty()) {
+            emptyFields = emptyFields + "GG2 Multiprobe Cond\n";
+            areFieldsEmpty = true;
+        }
+        if(this.gg2PHFld.getText().isEmpty()) {
+            emptyFields = emptyFields + "GG2 Multiprobe pH\n";
             areFieldsEmpty = true;
         }
         if(this.wellNotesFld.getText().isEmpty()) {
