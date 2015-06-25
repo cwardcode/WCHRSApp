@@ -19,6 +19,7 @@ public class Main extends javafx.application.Application {
     public static String screen2File = "GeneralData.fxml";
     public static String screen4ID = "Well Data";
     public static String screen4File = "WellData.fxml";
+    public static File inputFile;
     public static File outputFile;
     public static FileInputStream stream;
     public static XSSFWorkbook book;
@@ -42,12 +43,13 @@ public class Main extends javafx.application.Application {
     }
     public static void main(String[] args) {
         try {
-            outputFile = new File("rounds.xlsx");
-            stream = new FileInputStream(outputFile);
+            inputFile = new File("rounds.xlsx");
+            outputFile = new File("rounds_out.xlsx");
+            stream = new FileInputStream(inputFile);
             book = new XSSFWorkbook(stream);
             sheet = book.getSheetAt(0);
         } catch (IOException fnf) {
-            System.out.println("Couldn't find file! Tried looking in: " + outputFile.getAbsolutePath() + "Full dump: "
+            System.out.println("Couldn't find file! Tried looking in: " + inputFile.getAbsolutePath() + "Full dump: "
                     + fnf.getMessage());
         }
         launch(args);
