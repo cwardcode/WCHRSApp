@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/WCHRSApp</output-path>
     <properties id="javafx-properties">
       <options>
-        <option name="appClass" value="sample.Main" />
+        <option name="appClass" value="edu.wcu.wchrs.groundwater.Main" />
         <option name="description" value="" />
         <option name="htmlParamFile" value="" />
         <option name="nativeBundle" value="all" />

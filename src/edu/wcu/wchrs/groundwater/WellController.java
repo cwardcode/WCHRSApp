@@ -353,6 +353,7 @@ public class WellController extends GridPane implements Initializable, Controlle
             alert.showAndWait();
         }
         else {
+
             this.controller.setScreen(Main.screen1ID);
         }
     }
