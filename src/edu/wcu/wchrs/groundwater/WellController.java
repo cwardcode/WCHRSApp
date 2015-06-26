@@ -1,6 +1,8 @@
 package edu.wcu.wchrs.groundwater;
 
+import java.io.FileOutputStream;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import javafx.beans.value.ChangeListener;
@@ -11,6 +13,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 
 
 public class WellController extends GridPane implements Initializable, ControlledScreen {
@@ -353,7 +357,74 @@ public class WellController extends GridPane implements Initializable, Controlle
             alert.showAndWait();
         }
         else {
+            Iterator<Row> rowIterator = Main.sheet.rowIterator();
+            while(rowIterator.hasNext()) {
+                Row row = rowIterator.next();
+                Iterator<Cell> cellIterator = row.cellIterator();
+                while(cellIterator.hasNext()) {
+                    Cell curCell = cellIterator.next();
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1SDepth")) {
+                        curCell.setCellValue(this.gg1SFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1iDepth")) {
+                        curCell.setCellValue(this.gg1IFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1DDepth")) {
+                        curCell.setCellValue(this.gg1DFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1DLongDepth")) {
+                        curCell.setCellValue(this.gg1DLongFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2SDepth")) {
+                        curCell.setCellValue(this.gg2SFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2IDepth")) {
+                        curCell.setCellValue(this.gg2IFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2DDepth")) {
+                        curCell.setCellValue(this.gg2DFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG3SDepth")) {
+                        curCell.setCellValue(this.gg3SFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG3IDepth")) {
+                        curCell.setCellValue(this.gg3IFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG3DDepth")) {
+                        curCell.setCellValue(this.gg3DFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG4SDepth")) {
+                        curCell.setCellValue(this.gg3SFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG4IDepth")) {
+                        curCell.setCellValue(this.gg3IFld.getText());
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG4DDepth")) {
+                        curCell.setCellValue(this.gg4DFld.getText());
+                    }
 
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1MPTemp")) {
+                        curCell.setCellValue(this.gg4DFld.getText());
+                    }
+                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1MPCond")) {
+                        curCell.setCellValue(this.gg4DFld.getText());
+                    }
+                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1MPph")) {
+                        curCell.setCellValue(this.gg4DFld.getText());
+                    }
+                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2MPTemp")) {
+                        curCell.setCellValue(this.gg4DFld.getText());
+                    }
+                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2MPCond")) {
+                        curCell.setCellValue(this.gg4DFld.getText());
+                    }
+                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2MPph")) {
+                        curCell.setCellValue(this.gg4DFld.getText());
+                    }
+                }
+            }
+            FileOutputStream fos = new FileOutputStream(Main.outputFile);
+            Main.book.write(fos);
             this.controller.setScreen(Main.screen1ID);
         }
     }

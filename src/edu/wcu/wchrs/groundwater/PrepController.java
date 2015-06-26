@@ -77,6 +77,7 @@ public class PrepController
         }
         FileOutputStream fos = new FileOutputStream(Main.outputFile);
         Main.book.write(fos);
+        System.out.println("Written to: " + Main.outputFile.getAbsolutePath());
       myController.loadScreen("site data", "SiteData.fxml");
       myController.setScreen("site data");
     }

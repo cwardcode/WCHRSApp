@@ -23,6 +23,9 @@
    private CheckBox ruler;
    @FXML
    private CheckBox pen;
+   @FXML
+   private CheckBox atomic;
+
    String emptyFields;
    ScreensController controller;
    
@@ -54,6 +57,10 @@
    {
      boolean areFieldsEmpty = false;
      this.emptyFields = "Please enter the following fields: \n";
+     if (!this.atomic.isSelected()) {
+       this.emptyFields += "Atomic Time\n";
+       areFieldsEmpty = true;
+     }
      if (!this.bucket.isSelected()) {
        this.emptyFields += "Bucket\n";
        areFieldsEmpty = true;

@@ -4,7 +4,7 @@
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="edu.wcu.wchrs.groundwater.Main" />
-        <option name="description" value="" />
+        <option name="description" value="An app designed for making weekly round collection easier and more complete." />
         <option name="htmlParamFile" value="" />
         <option name="nativeBundle" value="all" />
         <option name="paramFile" value="" />
@@ -13,11 +13,13 @@
       </options>
     </properties>
     <root id="root">
-      <element id="module-output" name="WCHRSApp" />
       <element id="archive" name="WCHRSApp.jar">
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
         </element>
+        <element id="module-output" name="WCHRSApp" />
+        <element id="dir-copy" path="$PROJECT_DIR$/src/edu/wcu/wchrs/groundwater/files" />
+        <element id="library" level="project" name="libraries" />
       </element>
     </root>
   </artifact>
