@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Rectangle?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
-          fx:controller="edu.wcu.wchrs.groundwater.WellController">
+          fx:controller="edu.wcu.wchrs.groundwater.LongBranchWellController">
     <columnConstraints>
         <ColumnConstraints/>
     </columnConstraints>
@@ -161,12 +161,12 @@
                 <Label layoutX="120.0" layoutY="604.0" text="Temp (°C):"/>
                 <Label layoutX="274.0" layoutY="604.0" text="Cond:"/>
                 <Label layoutX="384.0" layoutY="604.0" prefHeight="21.0" prefWidth="32.0" text="pH:"/>
-                <TextField fx:id="gg1TempFld" layoutX="194.0" layoutY="529.0" prefHeight="31.0" prefWidth="74.0"/>
-                <TextField fx:id="gg1CondFld" layoutX="317.0" layoutY="529.0" prefHeight="31.0" prefWidth="62.0"/>
-                <TextField fx:id="gg1PHFld" layoutX="417.0" layoutY="528.0" prefHeight="31.0" prefWidth="62.0"/>
-                <TextField fx:id="gg2TempFld" layoutX="194.0" layoutY="600.0" prefHeight="31.0" prefWidth="74.0"/>
-                <TextField fx:id="gg2CondFld" layoutX="317.0" layoutY="600.0" prefHeight="31.0" prefWidth="62.0"/>
-                <TextField fx:id="gg2PHFld" layoutX="417.0" layoutY="599.0" prefHeight="31.0" prefWidth="62.0"/>
+                <TextField fx:id="mp1Temp" layoutX="194.0" layoutY="529.0" prefHeight="31.0" prefWidth="74.0"/>
+                <TextField fx:id="mp1Cond" layoutX="317.0" layoutY="529.0" prefHeight="31.0" prefWidth="62.0"/>
+                <TextField fx:id="mp1PH" layoutX="417.0" layoutY="528.0" prefHeight="31.0" prefWidth="62.0"/>
+                <TextField fx:id="mp2Temp" layoutX="194.0" layoutY="600.0" prefHeight="31.0" prefWidth="74.0"/>
+                <TextField fx:id="mp2Cond" layoutX="317.0" layoutY="600.0" prefHeight="31.0" prefWidth="62.0"/>
+                <TextField fx:id="mp2PH" layoutX="417.0" layoutY="599.0" prefHeight="31.0" prefWidth="62.0"/>
                 <Label layoutX="384.0" layoutY="533.0" prefHeight="21.0" prefWidth="32.0" text="pH:"/>
                 <Label layoutX="274.0" layoutY="533.0" text="Cond:"/>
                 <Label layoutX="120.0" layoutY="533.0" text="Temp (°C):"/>

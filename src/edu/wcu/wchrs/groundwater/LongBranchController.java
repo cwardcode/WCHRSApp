@@ -3,7 +3,6 @@ package edu.wcu.wchrs.groundwater;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -35,39 +34,7 @@ public class LongBranchController extends GridPane implements Initializable, Con
     @FXML
     private TextField stage;
     @FXML
-    private RadioButton rg1LevelYes;
-    @FXML
-    private RadioButton rg1LevelNo;
-    @FXML
-    private RadioButton rg1battOK;
-    @FXML
-    private RadioButton rg1battDead;
-    @FXML
-    private TextField rg1CondFld;
-    @FXML
-    private TextArea rg1NotesFld;
-    @FXML
     private TextArea siteNotesFld;
-    @FXML
-    private RadioButton smAYes;
-    @FXML
-    private RadioButton smANo;
-    @FXML
-    private RadioButton smBYes;
-    @FXML
-    private RadioButton smBNo;
-    @FXML
-    private RadioButton smCYes;
-    @FXML
-    private RadioButton smCNo;
-    @FXML
-    private TextField wellDepth;
-    @FXML
-    private TextField mpTemp;
-    @FXML
-    private TextField mpCond;
-    @FXML
-    private TextField mpPh;
 
     @FXML
     public void pressButton() throws Exception {
@@ -84,83 +51,30 @@ public class LongBranchController extends GridPane implements Initializable, Con
                 Iterator<Cell> cellIterator = row.cellIterator();
                 while (cellIterator.hasNext()) {
                     Cell curCell = cellIterator.next();
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierArrivTime")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBArrivTime")) {
                         curCell.setCellValue(this.timeOfArrivalFld.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierDistIn")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBDistIn")) {
                         curCell.setCellValue(this.distInside.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierDistOut")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBDistOut")) {
                         curCell.setCellValue(this.distOutside.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierStaff")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBStaff")) {
                         curCell.setCellValue(this.distStaff.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierStage")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBStage")) {
                         curCell.setCellValue(this.stage.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierNotes")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBNotes")) {
                         curCell.setCellValue(this.siteNotesFld.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierRGLevel")) {
-                        if (rg1LevelYes.isSelected()) {
-                            curCell.setCellValue("Yes");
-                        } else {
-                            curCell.setCellValue("No");
-                        }
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("gSMA")) {
-                        if (smAYes.isSelected()) {
-                            curCell.setCellValue("Yes");
-                        } else {
-                            curCell.setCellValue("No");
-                        }
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("gSMB")) {
-                        if (smBYes.isSelected()) {
-                            curCell.setCellValue("Yes");
-                        } else {
-                            curCell.setCellValue("No");
-                        }
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("gSMC")) {
-                        if (smCYes.isSelected()) {
-                            curCell.setCellValue("Yes");
-                        } else {
-                            curCell.setCellValue("No");
-                        }
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierRGCond")) {
-                        curCell.setCellValue(this.rg1CondFld.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierRGBatt")) {
-                        if (rg1battOK.isSelected()) {
-                            curCell.setCellValue("Ok");
-                        } else {
-                            curCell.setCellValue("Dead");
-                        }
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierRGNotes")) {
-                        curCell.setCellValue(this.rg1NotesFld.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierWellDepth")) {
-                        curCell.setCellValue(wellDepth.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierMPTemp")) {
-                        curCell.setCellValue(mpTemp.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierMPCond")) {
-                        curCell.setCellValue(mpCond.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierMPPH")) {
-                        curCell.setCellValue(mpPh.getText());
                     }
                 }
             }
             FileOutputStream fos = new FileOutputStream(Main.outputFile);
             Main.book.write(fos);
-            controller.loadScreen("gribble", "SiteData.fxml");
-            controller.setScreen("gribble");
+            controller.loadScreen("longbranchwells", "LongBranchWell.fxml");
+            controller.setScreen("longbranchwells");
         }
     }
 
@@ -194,54 +108,6 @@ public class LongBranchController extends GridPane implements Initializable, Con
 
         if (this.stage.getText().isEmpty()) {
             this.emptyFields += "Stage\n";
-            areFieldsEmpty = true;
-        }
-
-        if (!(this.rg1LevelYes.isSelected() || this.rg1LevelNo.isSelected())) {
-            this.emptyFields = emptyFields + "Rain Gauge 1 Level\n";
-            areFieldsEmpty = true;
-        }
-
-        if (!(this.rg1battOK.isSelected() || this.rg1battDead.isSelected())) {
-            this.emptyFields = emptyFields + "Rain Gauge 1 Battery\n";
-            areFieldsEmpty = true;
-        }
-
-        if (this.rg1CondFld.getText().isEmpty()) {
-            this.emptyFields = emptyFields + "Rain Gauge 1 Condition\n";
-            areFieldsEmpty = true;
-        }
-
-        if (this.rg1NotesFld.getText().isEmpty()) {
-            this.emptyFields = emptyFields + "Rain Gauge 1 Notes\n";
-            areFieldsEmpty = true;
-        }
-        if (!(this.smAYes.isSelected() || this.smANo.isSelected())) {
-            this.emptyFields = emptyFields + "Soil Moisture A\n";
-            areFieldsEmpty = true;
-        }
-        if (this.wellDepth.getText().isEmpty()) {
-            this.emptyFields += "Glacier 1 Well\n";
-            areFieldsEmpty = true;
-        }
-        if (!(this.smBYes.isSelected() || this.smBNo.isSelected())) {
-            this.emptyFields = emptyFields + "Soil Moisture B\n";
-            areFieldsEmpty = true;
-        }
-        if (!(this.smBYes.isSelected() || this.smBNo.isSelected())) {
-            this.emptyFields = emptyFields + "Soil Moisture C\n";
-            areFieldsEmpty = true;
-        }
-        if (this.mpTemp.getText().isEmpty()) {
-            this.emptyFields += "Multiprobe - temp\n";
-            areFieldsEmpty = true;
-        }
-        if (this.mpCond.getText().isEmpty()) {
-            this.emptyFields += "Multiprobe - Cond\n";
-            areFieldsEmpty = true;
-        }
-        if (this.mpPh.getText().isEmpty()) {
-            this.emptyFields += "Multiprobe - PH\n";
             areFieldsEmpty = true;
         }
         if (this.siteNotesFld.getText().isEmpty()) {
