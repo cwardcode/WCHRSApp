@@ -290,7 +290,6 @@ public class WellController extends GridPane implements Initializable, Controlle
                 if (!newValue) {
                     if (gg4DFld.getText().matches(regex)) {
                         double enteredData = Double.parseDouble(gg4DFld.getText());
-                        System.out.println("Entered data is:" + enteredData);
                         String[] range = gg4DHist.getText().split("-");
                         if (enteredData < Double.parseDouble(range[0].trim())
                                 || enteredData > Double.parseDouble(range[1].trim())) {
@@ -389,7 +388,8 @@ public class WellController extends GridPane implements Initializable, Controlle
             }
             FileOutputStream fos = new FileOutputStream(Main.outputFile);
             Main.book.write(fos);
-            this.controller.setScreen(Main.screen1ID);
+            controller.loadScreen("wind", "Wind.fxml");
+            this.controller.setScreen("wind");
         }
     }
 

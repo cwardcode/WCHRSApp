@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
+          fx:controller="edu.wcu.wchrs.groundwater.WellController">
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="910.0" prefWidth="570.0">
+            <children>
+                <GridPane layoutX="32.0" layoutY="32.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="gg1SFld" layoutX="121.0" layoutY="63.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+                        <TextField fx:id="gg1IFld" layoutX="121.0" layoutY="95.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="2"/>
+                        <TextField fx:id="gg1SHist" disable="true" editable="false" layoutX="321.0" layoutY="63.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.46 - 2.2" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
+                        <TextField fx:id="gg1DFld" layoutX="121.0" layoutY="127.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="3"/>
+                        <TextField fx:id="gg1DLongFld" layoutX="121.0" layoutY="159.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="4"/>
+                        <TextField fx:id="gg2SFld" layoutX="121.0" layoutY="191.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="5"/>
+                        <TextField fx:id="gg2IFld" layoutX="121.0" layoutY="223.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="6"/>
+                        <TextField fx:id="gg2DFld" layoutX="121.0" layoutY="255.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="7"/>
+                        <TextField fx:id="gg3SFld" layoutX="121.0" layoutY="287.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="8"/>
+                        <TextField fx:id="gg3IFld" layoutX="120.0" layoutY="319.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="9"/>
+                        <TextField fx:id="gg3DFld" layoutX="120.0" layoutY="351.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="10"/>
+                        <TextField fx:id="gg4SFld" layoutX="120.0" layoutY="383.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="11"/>
+                        <TextField fx:id="gg4IFld" layoutX="121.0" layoutY="415.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="12"/>
+                        <TextField fx:id="gg4DFld" layoutX="121.0" layoutY="447.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="13"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="255.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="7.7290" GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+                        <TextField fx:id="gg1DLongHist" disable="true" editable="false" layoutX="320.0" layoutY="159.0"
+                                   prefHeight="31.0" prefWidth="122.0" text=" 0 - 1.9" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="95.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="5.392" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="383.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="3.690" GridPane.columnIndex="3" GridPane.rowIndex="11"/>
+                        <Label layoutX="79.0" layoutY="228.0" text="GG2I:" GridPane.rowIndex="6"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="192.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="3.660" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+                        <TextField fx:id="gg3SHist" disable="true" editable="false" layoutX="321.0" layoutY="287.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.3 - 2.4" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="8"/>
+                        <TextField fx:id="gg4IHist" disable="true" editable="false" layoutX="321.0" layoutY="415.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="2.5 - 3.2" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="12"/>
+                        <TextField fx:id="gg3IHist" disable="true" editable="false" layoutX="321.0" layoutY="319.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.3 - 1.6" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="9"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="224.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="5.240" GridPane.columnIndex="3" GridPane.rowIndex="6"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="447.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="8.775" GridPane.columnIndex="3" GridPane.rowIndex="13"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="128.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="8.490" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+                        <TextField fx:id="gg3DHist" disable="true" editable="false" layoutX="321.0" layoutY="351.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.3 - 3.0" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="10"/>
+                        <Label layoutX="76.0" layoutY="68.0" text="GG1S:" GridPane.rowIndex="1"/>
+                        <TextField fx:id="gg2DHist" disable="true" editable="false" layoutX="320.0" layoutY="255.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.5 - 2.0" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="7"/>
+                        <TextField fx:id="gg4SHist" disable="true" editable="false" layoutX="321.0" layoutY="383.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="2.3 - 4.0" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="11"/>
+                        <TextField fx:id="gg2IHist" disable="true" editable="false" layoutX="320.0" layoutY="223.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.7 - 2.0" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="6"/>
+                        <Label layoutX="76.0" layoutY="388.0" text="GG4S:" GridPane.rowIndex="11"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="287.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="4.055" GridPane.columnIndex="3" GridPane.rowIndex="8"/>
+                        <Label layoutX="74.0" layoutY="356.0" text="GG3D:" GridPane.rowIndex="10"/>
+                        <Label layoutX="77.0" layoutY="292.0" text="GG3S:" GridPane.rowIndex="8"/>
+                        <Label layoutX="41.0" layoutY="164.0" text="GG1DLong:" GridPane.rowIndex="4"/>
+                        <Label layoutX="76.0" layoutY="195.0" text="GG2S:" GridPane.rowIndex="5"/>
+                        <TextField fx:id="gg4DHist" disable="true" editable="false" layoutX="320.0" layoutY="447.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.3 - 3.0" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="13"/>
+                        <TextField fx:id="gg1DHist" disable="true" editable="false" layoutX="320.0" layoutY="127.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.70 - 2.03" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="3"/>
+                        <Label layoutX="159.0" layoutY="32.0" text="Depth from TOC (m)" GridPane.columnIndex="1"
+                               GridPane.halignment="CENTER"/>
+                        <TextField fx:id="gg1IHist" disable="true" editable="false" layoutX="320.0" layoutY="95.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.18 - 2.01" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="319.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="5.360" GridPane.columnIndex="3" GridPane.rowIndex="9"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="160.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="8.155" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+                        <Label layoutX="76.0" layoutY="420.0" text="GG4I:" GridPane.rowIndex="12"/>
+                        <Label layoutX="74.0" layoutY="134.0" text="GG1D:" GridPane.rowIndex="3"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="351.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="8.527" GridPane.columnIndex="3" GridPane.rowIndex="10"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="63.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="3.390" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                        <Label layoutX="320.0" layoutY="32.0" text="Historic Range (m)" GridPane.columnIndex="2"
+                               GridPane.halignment="CENTER"/>
+                        <Label layoutX="75.0" layoutY="257.0" text="GG2D:" GridPane.rowIndex="7"/>
+                        <Label layoutX="81.0" layoutY="324.0" text="GG3I:" GridPane.rowIndex="9"/>
+                        <Label layoutX="452.0" layoutY="32.0" text="Total Depth (m)" GridPane.columnIndex="3"
+                               GridPane.halignment="CENTER"/>
+                        <TextField fx:id="gg2SHist" disable="true" editable="false" layoutX="320.0" layoutY="191.0"
+                                   prefHeight="31.0" prefWidth="122.0" text="1.9 - 2.3" GridPane.columnIndex="2"
+                                   GridPane.halignment="CENTER" GridPane.rowIndex="5"/>
+                        <Label layoutX="78.0" layoutY="101.0" text="GG1I:" GridPane.rowIndex="2"/>
+                        <Label layoutX="72.0" layoutY="452.0" text="GG4D:" GridPane.rowIndex="13"/>
+                        <TextField disable="true" editable="false" layoutX="452.0" layoutY="415.0" prefHeight="31.0"
+                                   prefWidth="104.0" text="5.555" GridPane.columnIndex="3" GridPane.rowIndex="12"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </GridPane>
+                <Label layoutX="120.0" layoutY="650.0" text="GG Well Notes"/>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2197ff00" height="174.0" layoutX="118.0"
+                           layoutY="476.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="369.0"/>
+                <Label layoutX="120.0" layoutY="583.0" text="GG2:"/>
+                <Label layoutX="120.0" layoutY="604.0" text="Temp (°C):"/>
+                <Label layoutX="274.0" layoutY="604.0" text="Cond:"/>
+                <Label layoutX="384.0" layoutY="604.0" prefHeight="21.0" prefWidth="32.0" text="pH:"/>
+                <TextField fx:id="gg1TempFld" layoutX="194.0" layoutY="529.0" prefHeight="31.0" prefWidth="74.0"/>
+                <TextField fx:id="gg1CondFld" layoutX="317.0" layoutY="529.0" prefHeight="31.0" prefWidth="62.0"/>
+                <TextField fx:id="gg1PHFld" layoutX="417.0" layoutY="528.0" prefHeight="31.0" prefWidth="62.0"/>
+                <TextField fx:id="gg2TempFld" layoutX="194.0" layoutY="600.0" prefHeight="31.0" prefWidth="74.0"/>
+                <TextField fx:id="gg2CondFld" layoutX="317.0" layoutY="600.0" prefHeight="31.0" prefWidth="62.0"/>
+                <TextField fx:id="gg2PHFld" layoutX="417.0" layoutY="599.0" prefHeight="31.0" prefWidth="62.0"/>
+                <Label layoutX="384.0" layoutY="533.0" prefHeight="21.0" prefWidth="32.0" text="pH:"/>
+                <Label layoutX="274.0" layoutY="533.0" text="Cond:"/>
+                <Label layoutX="120.0" layoutY="533.0" text="Temp (°C):"/>
+                <Label layoutX="120.0" layoutY="512.0" text="GG1:"/>
+                <Label layoutX="266.0" layoutY="476.0" text="Multiprobe"/>
+                <TextArea fx:id="wellNotesFld" layoutX="118.0" layoutY="671.0" prefHeight="145.0" prefWidth="369.0"
+                          promptText="If no notes, type none." wrapText="true"/>
+                <Button layoutX="262.0" layoutY="829.0" mnemonicParsing="false" onAction="#pressButton"
+                        text="Continue"/>
+            </children>
+        </Pane>
+    </children>
+</GridPane>

@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.*?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
-          fx:controller="edu.wcu.wchrs.groundwater.SiteDataController">
+          fx:controller="edu.wcu.wchrs.groundwater.WindController">
     <columnConstraints>
         <ColumnConstraints/>
     </columnConstraints>
@@ -19,6 +19,8 @@
     <children>
         <Pane prefHeight="910.0" prefWidth="570.0">
             <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="144.0" layoutX="65.0" layoutY="337.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="170.0"/>
                 <Label layoutX="147.0" layoutY="74.0" text="Site Name:"/>
                 <TextField fx:id="siteName" disable="true" editable="false" layoutX="245.0" layoutY="66.0" text="Wind"/>
                 <TextField fx:id="timeOfArrivalFld" disable="true" editable="false" layoutX="245.0" layoutY="99.0"/>
@@ -33,6 +35,8 @@
                 <TextField fx:id="stage" layoutX="245.0" layoutY="229.0"/>
                 <Group layoutX="144.0">
                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="218.0" layoutX="101.0"
+                                   layoutY="265.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="186.0"/>
                         <RadioButton fx:id="rg1battOK" layoutX="161.0" layoutY="314.0" mnemonicParsing="false"
                                      text="OK">
                             <font>
@@ -56,8 +60,6 @@
                         <Label layoutX="104.0" layoutY="311.0" text="Battery:"/>
                         <Label layoutX="152.0" layoutY="265.0" text="Wind RG"/>
                         <Label layoutX="104.0" layoutY="329.0" text="Condition:"/>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="218.0" layoutX="101.0"
-                                   layoutY="265.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="186.0"/>
                         <RadioButton fx:id="rg1battDead" layoutX="208.0" layoutY="314.0" mnemonicParsing="false"
                                      text="Dead" toggleGroup="$rg1Battery">
                             <font>
@@ -87,7 +89,7 @@
                           promptText="If no notes, type none..." wrapText="true"/>
                 <Button layoutX="250.0" layoutY="824.0" mnemonicParsing="false" onAction="#pressButton"
                         text="Continue"/>
-                <RadioButton fx:id="smAyes" layoutX="177.0" layoutY="516.0" mnemonicParsing="false" text="Yes">
+                <RadioButton fx:id="smAYes" layoutX="177.0" layoutY="516.0" mnemonicParsing="false" text="Yes">
                     <font>
                         <Font size="12.0"/>
                     </font>
@@ -133,6 +135,13 @@
                 <Label layoutX="201.0" layoutY="606.0" text="2:"/>
                 <TextField fx:id="culv1" layoutX="130.0" layoutY="601.0" prefHeight="31.0" prefWidth="60.0"/>
                 <Label layoutX="111.0" layoutY="606.0" text="1:"/>
+                <TextField fx:id="mpPh" layoutX="124.0" layoutY="435.0" prefHeight="31.0" prefWidth="91.0"/>
+                <Label layoutX="92.0" layoutY="439.0" text="pH:"/>
+                <TextField fx:id="mpCond" layoutX="124.0" layoutY="398.0" prefHeight="31.0" prefWidth="91.0"/>
+                <Label layoutX="76.0" layoutY="402.0" text="Cond:"/>
+                <Label layoutX="92.0" layoutY="337.0" text="Wind Multiprobe"/>
+                <Label layoutX="75.0" layoutY="368.0" text="Temp:"/>
+                <TextField fx:id="mpTemp" layoutX="123.0" layoutY="364.0" prefHeight="31.0" prefWidth="91.0"/>
             </children>
         </Pane>
     </children>

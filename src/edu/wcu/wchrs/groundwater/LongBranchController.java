@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
-public class GlacierController extends GridPane implements Initializable, ControlledScreen {
+public class LongBranchController extends GridPane implements Initializable, ControlledScreen {
     private String emptyFields;
 
     private ScreensController controller;
@@ -228,7 +228,7 @@ public class GlacierController extends GridPane implements Initializable, Contro
             this.emptyFields = emptyFields + "Soil Moisture B\n";
             areFieldsEmpty = true;
         }
-        if (!(this.smCYes.isSelected() || this.smCNo.isSelected())) {
+        if (!(this.smBYes.isSelected() || this.smBNo.isSelected())) {
             this.emptyFields = emptyFields + "Soil Moisture C\n";
             areFieldsEmpty = true;
         }
