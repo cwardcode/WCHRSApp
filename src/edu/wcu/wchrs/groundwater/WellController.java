@@ -1,10 +1,5 @@
 package edu.wcu.wchrs.groundwater;
 
-import java.io.FileOutputStream;
-import java.net.URL;
-import java.util.Iterator;
-import java.util.ResourceBundle;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -16,9 +11,14 @@ import javafx.scene.layout.GridPane;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
+import java.io.FileOutputStream;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.ResourceBundle;
+
 
 public class WellController extends GridPane implements Initializable, ControlledScreen {
-    private String regex = "[0-9]+([,.][0-9]{1,2})?";
+    private String regex = "[0-9]+([,.][0-9]{1,3})?";
     @FXML
     private TextField gg1SFld;
     @FXML
@@ -94,22 +94,19 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.controller = screenPage;
     }
 
-
     public void initialize(URL location, ResourceBundle resources) {
         this.gg1SFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg1SFld.getText().isEmpty() && gg1SFld.getText().matches(regex)) {
+                    if (gg1SFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg1SFld.getText());
                     String[] range = gg1SHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
@@ -119,15 +116,13 @@ public class WellController extends GridPane implements Initializable, Controlle
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg1IFld.getText().isEmpty() && gg1IFld.getText().matches(regex)) {
+                    if (gg1IFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg1IFld.getText());
                     String[] range = gg1IHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
@@ -137,15 +132,13 @@ public class WellController extends GridPane implements Initializable, Controlle
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg1DFld.getText().isEmpty() && gg1DFld.getText().matches(regex)) {
+                    if (gg1DFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg1DFld.getText());
                     String[] range = gg1DHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
@@ -155,15 +148,13 @@ public class WellController extends GridPane implements Initializable, Controlle
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg1DLongFld.getText().isEmpty() && gg1DLongFld.getText().matches(regex)) {
+                    if (gg1DLongFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg1DLongFld.getText());
                     String[] range = gg1DLongHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
@@ -173,15 +164,13 @@ public class WellController extends GridPane implements Initializable, Controlle
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg2SFld.getText().isEmpty() && gg2SFld.getText().matches(regex)) {
+                    if (gg2SFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg2SFld.getText());
                     String[] range = gg2SHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                       showInputAlert();
                     }
                 }
             }
@@ -191,15 +180,13 @@ public class WellController extends GridPane implements Initializable, Controlle
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg2IFld.getText().isEmpty() && gg2IFld.getText().matches(regex)) {
+                    if (gg2IFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg2IFld.getText());
                     String[] range = gg2IHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
@@ -209,15 +196,13 @@ public class WellController extends GridPane implements Initializable, Controlle
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg2DFld.getText().isEmpty() && gg2DFld.getText().matches(regex)) {
+                    if (gg2DFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg2DFld.getText());
                     String[] range = gg2DHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
@@ -227,15 +212,13 @@ public class WellController extends GridPane implements Initializable, Controlle
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg3SFld.getText().isEmpty() && gg3SFld.getText().matches(regex)) {
+                    if (gg3SFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg3SFld.getText());
                     String[] range = gg3SHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
@@ -245,15 +228,13 @@ public class WellController extends GridPane implements Initializable, Controlle
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue)
                 {
-                    if (!gg3IFld.getText().isEmpty() && gg3IFld.getText().matches(regex)) {
+                    if (gg3IFld.getText().matches(regex)) {
                     double enteredData = Double.parseDouble(gg3IFld.getText());
                     String[] range = gg3IHist.getText().split("-");
                     if(enteredData < Double.parseDouble(range[0].trim())
                                                                  || enteredData > Double.parseDouble(range[1].trim())) {
                         showDataAlert();
                     }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
@@ -261,17 +242,14 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg3DFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue)
-                {
-                    if (!gg3DFld.getText().isEmpty() && gg3DFld.getText().matches(regex)) {
-                    double enteredData = Double.parseDouble(gg3DFld.getText());
-                    String[] range = gg3DHist.getText().split("-");
-                    if(enteredData < Double.parseDouble(range[0].trim())
-                                                                 || enteredData > Double.parseDouble(range[1].trim())) {
-                        showDataAlert();
-                    }
-                    } else {
-                        showInputAlert();
+                if (!newValue) {
+                    if (gg3DFld.getText().matches(regex)) {
+                        double enteredData = Double.parseDouble(gg3DFld.getText());
+                        String[] range = gg3DHist.getText().split("-");
+                        if (enteredData < Double.parseDouble(range[0].trim())
+                                || enteredData > Double.parseDouble(range[1].trim())) {
+                            showDataAlert();
+                        }
                     }
                 }
             }
@@ -279,18 +257,14 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg4SFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue)
-                {
-                    if (!gg4SFld.getText().isEmpty() && gg4SFld.getText().matches(regex)) {
-                    double enteredData = Double.parseDouble(gg4SFld.getText());
-                    String[] range = gg4SHist.getText().split("-");
-                    if(enteredData < Double.parseDouble(range[0].trim())
-                                                                 || enteredData > Double.parseDouble(range[1].trim())) {
-                        showDataAlert();
-                    }
-                    } else {
-                        showInputAlert();
-                        System.out.println("Not A Number!!");
+                if (!newValue) {
+                    if (gg4SFld.getText().matches(regex)) {
+                        double enteredData = Double.parseDouble(gg4SFld.getText());
+                        String[] range = gg4SHist.getText().split("-");
+                        if (enteredData < Double.parseDouble(range[0].trim())
+                                || enteredData > Double.parseDouble(range[1].trim())) {
+                            showDataAlert();
+                        }
                     }
                 }
             }
@@ -298,17 +272,14 @@ public class WellController extends GridPane implements Initializable, Controlle
         this.gg4IFld.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue)
-                {
-                    if (!gg4IFld.getText().isEmpty() && gg4IFld.getText().matches(regex)) {
-                    double enteredData = Double.parseDouble(gg4IFld.getText());
-                    String[] range = gg4IHist.getText().split("-");
-                    if(enteredData < Double.parseDouble(range[0].trim())
-                                                                 || enteredData > Double.parseDouble(range[1].trim())) {
-                        showDataAlert();
-                    }
-                    } else {
-                        showInputAlert();
+                if (!newValue) {
+                    if (gg4IFld.getText().matches(regex)) {
+                        double enteredData = Double.parseDouble(gg4IFld.getText());
+                        String[] range = gg4IHist.getText().split("-");
+                        if (enteredData < Double.parseDouble(range[0].trim())
+                                || enteredData > Double.parseDouble(range[1].trim())) {
+                            showDataAlert();
+                        }
                     }
                 }
             }
@@ -317,27 +288,20 @@ public class WellController extends GridPane implements Initializable, Controlle
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue) {
-                    if (!gg4DFld.getText().isEmpty() && gg4DFld.getText().matches(regex)) {
+                    if (gg4DFld.getText().matches(regex)) {
                         double enteredData = Double.parseDouble(gg4DFld.getText());
+                        System.out.println("Entered data is:" + enteredData);
                         String[] range = gg4DHist.getText().split("-");
                         if (enteredData < Double.parseDouble(range[0].trim())
                                 || enteredData > Double.parseDouble(range[1].trim())) {
                             showDataAlert();
                         }
-                    } else {
-                        showInputAlert();
                     }
                 }
             }
         });
     }
-    public void showInputAlert() {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Warning: Invalid entry");
-        alert.setHeaderText("Invalid data entered");
-        alert.setContentText("Please only enter numbers and decimals.");
-        alert.showAndWait();
-    }
+
     public void showDataAlert() {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Warning: Possible erroneous data");
@@ -345,6 +309,7 @@ public class WellController extends GridPane implements Initializable, Controlle
         alert.setContentText("The entered data is out of the historic range, please be sure that it is correct.");
         alert.showAndWait();
     }
+
     @FXML
     public void pressButton()
             throws Exception
@@ -402,24 +367,23 @@ public class WellController extends GridPane implements Initializable, Controlle
                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG4DDepth")) {
                         curCell.setCellValue(this.gg4DFld.getText());
                     }
-
                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1MPTemp")) {
-                        curCell.setCellValue(this.gg4DFld.getText());
+                        curCell.setCellValue(this.gg1TempFld.getText());
                     }
                      if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1MPCond")) {
-                        curCell.setCellValue(this.gg4DFld.getText());
+                         curCell.setCellValue(this.gg1CondFld.getText());
                     }
                      if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG1MPph")) {
-                        curCell.setCellValue(this.gg4DFld.getText());
+                         curCell.setCellValue(this.gg1PHFld.getText());
                     }
                      if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2MPTemp")) {
-                        curCell.setCellValue(this.gg4DFld.getText());
+                         curCell.setCellValue(this.gg2TempFld.getText());
                     }
                      if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2MPCond")) {
-                        curCell.setCellValue(this.gg4DFld.getText());
+                         curCell.setCellValue(this.gg2CondFld.getText());
                     }
                      if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2MPph")) {
-                        curCell.setCellValue(this.gg4DFld.getText());
+                         curCell.setCellValue(this.gg2PHFld.getText());
                     }
                 }
             }

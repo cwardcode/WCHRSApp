@@ -1,12 +1,5 @@
 package edu.wcu.wchrs.groundwater;
 
-import java.io.FileOutputStream;
-import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -15,10 +8,15 @@ import javafx.scene.layout.GridPane;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-public class PrepController
-        extends GridPane
-        implements Initializable, ControlledScreen
-{
+import java.io.FileOutputStream;
+import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.ResourceBundle;
+
+public class PrepController extends GridPane implements Initializable, ControlledScreen {
   @FXML
   private TextField nameFld;
   @FXML
@@ -78,8 +76,8 @@ public class PrepController
         FileOutputStream fos = new FileOutputStream(Main.outputFile);
         Main.book.write(fos);
         System.out.println("Written to: " + Main.outputFile.getAbsolutePath());
-      myController.loadScreen("site data", "SiteData.fxml");
-      myController.setScreen("site data");
+        myController.loadScreen("glacier", "Glacier.fxml");
+        myController.setScreen("glacier");
     }
   }
 

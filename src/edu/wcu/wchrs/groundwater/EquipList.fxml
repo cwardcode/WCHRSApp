@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wcu.wchrs.groundwater.EquipController">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
+          fx:controller="edu.wcu.wchrs.groundwater.EquipController">
     <columnConstraints>
         <ColumnConstraints />
     </columnConstraints>
@@ -20,6 +17,8 @@
     <children>
         <Pane prefHeight="910.0" prefWidth="570.0">
             <children>
+                <CheckBox fx:id="atomic" layoutX="207.0" layoutY="136.0" mnemonicParsing="false"
+                          text="Check Atomic Time"/>
                 <CheckBox fx:id="bucket" layoutX="207.0" layoutY="163.0" mnemonicParsing="false" text="Bucket" />
                 <CheckBox fx:id="ruler" layoutX="207.0" layoutY="190.0" mnemonicParsing="false" text="Folding Ruler" />
                 <CheckBox fx:id="tape" layoutX="207.0" layoutY="218.0" mnemonicParsing="false" text="Water Level Tape" />
@@ -31,7 +30,6 @@
                    </font>
                 </Label>
                 <Button layoutX="238.0" layoutY="319.0" mnemonicParsing="false" onAction="#pressButton" text="Continue" />
-            <CheckBox fx:id="atomic" layoutX="207.0" layoutY="136.0" mnemonicParsing="false" text="Check Atomic Time" />
             </children>
         </Pane>
     </children>

@@ -1,5 +1,17 @@
 package edu.wcu.wchrs.groundwater;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+
 import java.io.FileOutputStream;
 import java.net.URL;
 import java.text.DateFormat;
@@ -7,17 +19,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.ResourceBundle;
-
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Cell;
 
 public class SiteDataController extends GridPane implements Initializable, ControlledScreen {
     private String emptyFields;
@@ -35,6 +36,14 @@ public class SiteDataController extends GridPane implements Initializable, Contr
     private TextField distStaff;
     @FXML
     private TextField stage;
+    @FXML
+    private RadioButton smAYes;
+    @FXML
+    private RadioButton smANo;
+    @FXML
+    private RadioButton smBYes;
+    @FXML
+    private RadioButton smBNo;
     @FXML
     private RadioButton rg1LevelYes;
     @FXML
@@ -143,6 +152,20 @@ public class SiteDataController extends GridPane implements Initializable, Contr
                             curCell.setCellValue("Dead");
                         }
                     }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("ggSMR")) {
+                        if (smBYes.isSelected()) {
+                            curCell.setCellValue("Yes");
+                        } else {
+                            curCell.setCellValue("No");
+                        }
+                    }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("ggSML")) {
+                        if (smAYes.isSelected()) {
+                            curCell.setCellValue("Yes");
+                        } else {
+                            curCell.setCellValue("No");
+                        }
+                    }
                     if(curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GGRG2Notes")) {
                         curCell.setCellValue(this.rg2NotesFld.getText());
                     }
@@ -230,11 +253,14 @@ public class SiteDataController extends GridPane implements Initializable, Contr
            areFieldsEmpty = true;
         }
 
-        if(this.rg2CondFld.getText().isEmpty()) {
-            this.emptyFields = emptyFields + "Rain Gauge 2 Condition\n";
+        if (!(this.smAYes.isSelected() || this.smANo.isSelected())) {
+            this.emptyFields = emptyFields + "Soil Moisture - Left\n";
             areFieldsEmpty = true;
         }
-
+        if (!(this.smBYes.isSelected() || this.smBNo.isSelected())) {
+            this.emptyFields = emptyFields + "Soil Moisture - Right\n";
+            areFieldsEmpty = true;
+        }
         if(this.rg2NotesFld.getText().isEmpty()) {
             this.emptyFields = emptyFields + "Rain Gauge 2 Notes\n";
             areFieldsEmpty = true;

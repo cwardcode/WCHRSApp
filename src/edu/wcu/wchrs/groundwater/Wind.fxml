@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
+          fx:controller="edu.wcu.wchrs.groundwater.SiteDataController">
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="910.0" prefWidth="570.0">
+            <children>
+                <Label layoutX="147.0" layoutY="74.0" text="Site Name:"/>
+                <TextField fx:id="siteName" disable="true" editable="false" layoutX="245.0" layoutY="66.0" text="Wind"/>
+                <TextField fx:id="timeOfArrivalFld" disable="true" editable="false" layoutX="245.0" layoutY="99.0"/>
+                <Label layoutX="119.0" layoutY="107.0" text="Time of Arrival:"/>
+                <TextField fx:id="distInside" layoutX="245.0" layoutY="132.0" promptText="TOC to stream bed"/>
+                <Label layoutX="69.0" layoutY="171.0" text="Distance Outside (cm):"/>
+                <TextField fx:id="distOutside" layoutX="245.0" layoutY="164.0" promptText="TOC to stream bed"/>
+                <Label layoutX="27.0" layoutY="201.0" text="Distance of Staff Gauge (cm):"/>
+                <TextField fx:id="distStaff" layoutX="245.0" layoutY="197.0" promptText="Top to stream bed"/>
+                <Label layoutX="82.0" layoutY="141.0" text="Distance Inside (cm):"/>
+                <Label layoutX="176.0" layoutY="232.0" text="Stage:"/>
+                <TextField fx:id="stage" layoutX="245.0" layoutY="229.0"/>
+                <Group layoutX="144.0">
+                    <children>
+                        <RadioButton fx:id="rg1battOK" layoutX="161.0" layoutY="314.0" mnemonicParsing="false"
+                                     text="OK">
+                            <font>
+                                <Font size="12.0"/>
+                            </font>
+                            <toggleGroup>
+                                <ToggleGroup fx:id="rg1Battery"/>
+                            </toggleGroup>
+                        </RadioButton>
+                        <Label layoutX="116.0" layoutY="292.0" text="Level:"/>
+                        <Label layoutX="107.0" layoutY="380.0" text="Notes:"/>
+                        <RadioButton fx:id="rg1LevelNo" layoutX="207.0" layoutY="294.0" mnemonicParsing="false"
+                                     text="No">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="rg1Level"/>
+                            </toggleGroup>
+                            <font>
+                                <Font size="12.0"/>
+                            </font>
+                        </RadioButton>
+                        <Label layoutX="104.0" layoutY="311.0" text="Battery:"/>
+                        <Label layoutX="152.0" layoutY="265.0" text="Wind RG"/>
+                        <Label layoutX="104.0" layoutY="329.0" text="Condition:"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="218.0" layoutX="101.0"
+                                   layoutY="265.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="186.0"/>
+                        <RadioButton fx:id="rg1battDead" layoutX="208.0" layoutY="314.0" mnemonicParsing="false"
+                                     text="Dead" toggleGroup="$rg1Battery">
+                            <font>
+                                <Font size="12.0"/>
+                            </font>
+                        </RadioButton>
+                        <TextArea fx:id="rg1NotesFld" layoutX="105.0" layoutY="402.0" prefHeight="77.0"
+                                  prefWidth="170.0" promptText="If no notes, type None" wrapText="true"/>
+                        <RadioButton fx:id="rg1LevelYes" layoutX="161.0" layoutY="294.0" mnemonicParsing="false"
+                                     text="Yes" toggleGroup="$rg1Level">
+                            <font>
+                                <Font size="12.0"/>
+                            </font>
+                        </RadioButton>
+                        <TextField fx:id="rg1CondFld" layoutX="105.0" layoutY="350.0" prefHeight="31.0"
+                                   prefWidth="170.0"/>
+                    </children>
+                </Group>
+                <Label layoutX="103.0" layoutY="652.0" text="Site Notes:"/>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="59.0" layoutX="106.0" layoutY="505.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="369.0"/>
+                <Label layoutX="102.0" layoutY="483.0" text="Moisture Sensors Running?"/>
+                <Label layoutX="155.0" layoutY="524.0" text="A:"/>
+                <Label layoutX="245.0" layoutY="524.0" text="B:"/>
+                <Label layoutX="337.0" layoutY="524.0" text="C:"/>
+                <TextArea fx:id="siteNotesFld" layoutX="101.0" layoutY="673.0" prefHeight="133.0" prefWidth="369.0"
+                          promptText="If no notes, type none..." wrapText="true"/>
+                <Button layoutX="250.0" layoutY="824.0" mnemonicParsing="false" onAction="#pressButton"
+                        text="Continue"/>
+                <RadioButton fx:id="smAyes" layoutX="177.0" layoutY="516.0" mnemonicParsing="false" text="Yes">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="smANo" layoutX="177.0" layoutY="537.0" mnemonicParsing="false" text="No">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="smBNo" layoutX="271.0" layoutY="537.0" mnemonicParsing="false" text="No">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="smBYes" layoutX="271.0" layoutY="516.0" mnemonicParsing="false" text="Yes">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="smCYes" layoutX="362.0" layoutY="516.0" mnemonicParsing="false" text="Yes">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="smCNo" layoutX="362.0" layoutY="537.0" mnemonicParsing="false" text="No">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </RadioButton>
+                <Label layoutX="37.0" layoutY="270.0" text="Wind Fan Well"/>
+                <TextField fx:id="fanDepth" layoutX="149.0" layoutY="265.0" prefHeight="31.0" prefWidth="91.0"/>
+                <TextField fx:id="slopeDepth" layoutX="149.0" layoutY="301.0" prefHeight="31.0" prefWidth="91.0"/>
+                <Label layoutX="23.0" layoutY="306.0" text="Wind Slope Well"/>
+                <Label layoutX="103.0" layoutY="566.0" text="Wind Culvert (Time to Fill Bucket)"/>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="59.0" layoutX="107.0" layoutY="588.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="369.0"/>
+                <TextField fx:id="culvAvg" disable="true" editable="false" layoutX="412.0" layoutY="601.0"
+                           prefHeight="31.0" prefWidth="60.0"/>
+                <Label layoutX="376.0" layoutY="606.0" text="Avg:"/>
+                <TextField fx:id="culv3" layoutX="311.0" layoutY="601.0" prefHeight="31.0" prefWidth="60.0"/>
+                <Label layoutX="293.0" layoutY="606.0" text="3:"/>
+                <TextField fx:id="culv2" layoutX="223.0" layoutY="601.0" prefHeight="31.0" prefWidth="60.0"/>
+                <Label layoutX="201.0" layoutY="606.0" text="2:"/>
+                <TextField fx:id="culv1" layoutX="130.0" layoutY="601.0" prefHeight="31.0" prefWidth="60.0"/>
+                <Label layoutX="111.0" layoutY="606.0" text="1:"/>
+            </children>
+        </Pane>
+    </children>
+</GridPane>

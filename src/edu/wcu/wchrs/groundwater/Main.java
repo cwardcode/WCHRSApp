@@ -26,30 +26,16 @@ public class Main extends javafx.application.Application {
     public static FileInputStream stream;
     public static XSSFWorkbook book;
     public static XSSFSheet sheet;
-    public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("WCHRS Groundwater Data Collection");
-        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("gfx/water-droplet-icon.jpg")));
-        ScreensController screens = new ScreensController();
-        screens.loadScreen(screen1ID, screen1File);
-        screens.loadScreen(screen2ID, screen2File);
-        screens.loadScreen(screen4ID, screen4File);
-        screens.setScreen(screen1ID);
 
-        Group root = new Group();
-        root.getChildren().addAll(screens);
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
     public static void main(String[] args) {
         try {
             //Get current user
             String username = System.getProperty("user.name");
             String osName = System.getProperty("os.name").split("\\s+")[0];
 
-            if(osName.equals("Windows")) {
+            if (osName.equals("Windows")) {
                 outputFile = new File("C:\\users\\" + username + "\\desktop\\WeeklyRounds_" + getCurrentDate() + ".xlsx");
-            } else if(osName.toLowerCase() == "linux") {
+            } else if (osName.toLowerCase().equals("linux")) {
                 outputFile = new File("/home/" + username + "WeeklyRounds_" + getCurrentDate() + ".xlsx");
             }
 
@@ -65,9 +51,27 @@ public class Main extends javafx.application.Application {
         }
         launch(args);
     }
+
     public static String getCurrentDate() {
         DateFormat dateFormat = new SimpleDateFormat("MM.dd.yy");
         Date date = new Date();
         return dateFormat.format(date);
   }
+
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("WCHRS Groundwater Data Collection");
+        primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("gfx/water-droplet-icon.jpg")));
+        ScreensController screens = new ScreensController();
+        screens.loadScreen(screen1ID, screen1File);
+        screens.loadScreen(screen2ID, screen2File);
+        screens.loadScreen(screen4ID, screen4File);
+        screens.setScreen(screen1ID);
+
+        Group root = new Group();
+        root.getChildren().addAll(screens);
+        Scene scene = new Scene(root);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 }
