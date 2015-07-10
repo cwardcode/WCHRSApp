@@ -60,7 +60,7 @@ public class LongBranchController extends GridPane implements Initializable, Con
                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBDistOut")) {
                         curCell.setCellValue(this.distOutside.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBStaff")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBDistStaff")) {
                         curCell.setCellValue(this.distStaff.getText());
                     }
                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("LBStage")) {

@@ -384,6 +384,9 @@ public class WellController extends GridPane implements Initializable, Controlle
                      if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GG2MPph")) {
                          curCell.setCellValue(this.gg2PHFld.getText());
                     }
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GGWellNotes")) {
+                        curCell.setCellValue(this.wellNotesFld.getText());
+                    }
                 }
             }
             FileOutputStream fos = new FileOutputStream(Main.outputFile);

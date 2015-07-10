@@ -93,18 +93,26 @@
                     <font>
                         <Font size="12.0"/>
                     </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="smA"/>
+                    </toggleGroup>
                 </RadioButton>
-                <RadioButton fx:id="smANo" layoutX="177.0" layoutY="537.0" mnemonicParsing="false" text="No">
+                <RadioButton fx:id="smANo" layoutX="177.0" layoutY="537.0" mnemonicParsing="false" text="No"
+                             toggleGroup="$smA">
                     <font>
                         <Font size="12.0"/>
                     </font>
                 </RadioButton>
                 <RadioButton fx:id="smBNo" layoutX="271.0" layoutY="537.0" mnemonicParsing="false" text="No">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="smB"/>
+                    </toggleGroup>
                     <font>
                         <Font size="12.0"/>
                     </font>
                 </RadioButton>
-                <RadioButton fx:id="smBYes" layoutX="271.0" layoutY="516.0" mnemonicParsing="false" text="Yes">
+                <RadioButton fx:id="smBYes" layoutX="271.0" layoutY="516.0" mnemonicParsing="false" text="Yes"
+                             toggleGroup="$smB">
                     <font>
                         <Font size="12.0"/>
                     </font>
@@ -113,8 +121,12 @@
                     <font>
                         <Font size="12.0"/>
                     </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="smC"/>
+                    </toggleGroup>
                 </RadioButton>
-                <RadioButton fx:id="smCNo" layoutX="362.0" layoutY="537.0" mnemonicParsing="false" text="No">
+                <RadioButton fx:id="smCNo" layoutX="362.0" layoutY="537.0" mnemonicParsing="false" text="No"
+                             toggleGroup="$smC">
                     <font>
                         <Font size="12.0"/>
                     </font>

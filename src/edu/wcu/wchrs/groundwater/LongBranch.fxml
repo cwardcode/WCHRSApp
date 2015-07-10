@@ -29,10 +29,10 @@
                 <Label layoutX="82.0" layoutY="141.0" text="Distance Inside (cm):"/>
                 <Label layoutX="176.0" layoutY="232.0" text="Stage:"/>
                 <TextField fx:id="stage" layoutX="245.0" layoutY="229.0"/>
-                <Label layoutX="103.0" layoutY="492.0" text="Site Notes:"/>
-                <TextArea fx:id="siteNotesFld" layoutX="101.0" layoutY="513.0" prefHeight="133.0" prefWidth="369.0"
+                <Label layoutX="103.0" layoutY="270.0" text="Site Notes:"/>
+                <TextArea fx:id="siteNotesFld" layoutX="101.0" layoutY="291.0" prefHeight="133.0" prefWidth="369.0"
                           promptText="If no notes, type none..." wrapText="true"/>
-                <Button layoutX="250.0" layoutY="664.0" mnemonicParsing="false" onAction="#pressButton"
+                <Button layoutX="250.0" layoutY="442.0" mnemonicParsing="false" onAction="#pressButton"
                         text="Continue"/>
             </children>
         </Pane>
