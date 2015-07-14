@@ -33,27 +33,6 @@ public class Main extends javafx.application.Application {
     private static String osName;
 
     public static void main(String[] args) {
-        try {
-            //Get current user
-            username = System.getProperty("user.name");
-            osName = System.getProperty("os.name").split("\\s+")[0];
-
-            if (osName.equals("Windows")) {
-                outputFile = new File("C:\\users\\" + username + "\\desktop\\WeeklyRounds_" + getCurrentDate() + ".xlsx");
-            } else if (osName.toLowerCase().equals("linux")) {
-                outputFile = new File("/home/" + username + "WeeklyRounds_" + getCurrentDate() + ".xlsx");
-            }
-
-            OutputStream out = new FileOutputStream(outputFile);
-            InputStream is = Main.class.getResourceAsStream("files/rounds.xlsx");
-            IOUtils.copy(is, out);
-            inputFile = outputFile;
-            stream = new FileInputStream(inputFile);
-            book = new XSSFWorkbook(stream);
-            sheet = book.getSheetAt(0);
-        } catch (IOException fnf) {
-            System.out.println("Couldn't find file! Error: " + fnf.getMessage());
-        }
         launch(args);
     }
 
@@ -68,6 +47,7 @@ public class Main extends javafx.application.Application {
         if (result.get() == ButtonType.OK) {
             has_dropbox = true;
         }
+        System.out.println("User has dropbox: " + has_dropbox);
         return has_dropbox;
     }
 
@@ -84,19 +64,42 @@ public class Main extends javafx.application.Application {
         screens.loadScreen(screen1ID, screen1File);
         screens.loadScreen(screen2ID, screen2File);
         screens.loadScreen(screen4ID, screen4File);
-        screens.setScreen(screen1ID);
+        screens.loadScreen("wind", "screens/Wind.fxml");
+        screens.setScreen("wind");
 
         Group root = new Group();
         root.getChildren().addAll(screens);
         Scene scene = new Scene(root);
 
-        //Prompt for dropbox installed dialog
-        if (userHasDropbox()) {
-            if (osName.equals("Windows")) {
-                outputFile = new File("C:\\users\\" + username + "\\Dropbox\\WCU-DENR MP\\Scanned Datasheets\\Weekly Rounds (GW Head Levels)\\2015\\WeeklyRounds_" + getCurrentDate() + ".xlsx");
-            } else if (osName.toLowerCase().equals("linux")) {
-                outputFile = new File("/home/" + username + "/Dropbox/WCU-DENR MP/Scanned Datasheets/Weekly Rounds (GW Head Levels)/2015/WeeklyRounds_" + getCurrentDate() + ".xlsx");
+        try {
+            //Get current user
+            username = System.getProperty("user.name");
+            osName = System.getProperty("os.name").split("\\s+")[0];
+
+            //Prompt for dropbox installed dialog
+            if (userHasDropbox()) {
+                if (osName.equals("Windows")) {
+                    outputFile = new File("C:\\users\\" + username + "\\Dropbox\\WCU-DENR MP\\Scanned Datasheets\\Weekly Rounds (GW Head Levels)\\2015\\WeeklyRounds_" + getCurrentDate() + ".xlsx");
+                } else if (osName.toLowerCase().equals("linux")) {
+                    outputFile = new File("/home/" + username + "/Dropbox/WCU-DENR MP/Scanned Datasheets/Weekly Rounds (GW Head Levels)/2015/WeeklyRounds_" + getCurrentDate() + ".xlsx");
+                }
+            } else {
+                if (osName.equals("Windows")) {
+                    outputFile = new File("C:\\users\\" + username + "\\desktop\\WeeklyRounds_" + getCurrentDate() + ".xlsx");
+                } else if (osName.toLowerCase().equals("linux")) {
+                    outputFile = new File("/home/" + username + "WeeklyRounds_" + getCurrentDate() + ".xlsx");
+                }
             }
+
+            OutputStream out = new FileOutputStream(outputFile);
+            InputStream is = Main.class.getResourceAsStream("files/rounds.xlsx");
+            IOUtils.copy(is, out);
+            inputFile = outputFile;
+            stream = new FileInputStream(inputFile);
+            book = new XSSFWorkbook(stream);
+            sheet = book.getSheetAt(0);
+        } catch (IOException fnf) {
+            System.out.println("Couldn't find file! Error: " + fnf.getMessage());
         }
         primaryStage.setScene(scene);
         primaryStage.show();

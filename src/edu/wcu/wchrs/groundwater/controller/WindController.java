@@ -189,7 +189,7 @@ public class WindController extends GridPane implements Initializable, Controlle
             }
             FileOutputStream fos = new FileOutputStream(Main.outputFile);
             Main.book.write(fos);
-            controller.loadScreen("longbranch", "screns/LongBranch.fxml");
+            controller.loadScreen("longbranch", "screens/LongBranch.fxml");
             controller.setScreen("longbranch");
         }
     }
