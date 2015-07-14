@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Rectangle?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
-          fx:controller="edu.wcu.wchrs.groundwater.WellController">
+          fx:controller="edu.wcu.wchrs.groundwater.controller.WellController">
     <columnConstraints>
         <ColumnConstraints/>
     </columnConstraints>

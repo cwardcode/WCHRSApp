@@ -1,7 +1,8 @@
-package edu.wcu.wchrs.groundwater;
+package edu.wcu.wchrs.groundwater.controller;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import edu.wcu.wchrs.groundwater.ControlledScreen;
+import edu.wcu.wchrs.groundwater.Main;
+import edu.wcu.wchrs.groundwater.ScreensController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -20,7 +21,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
-public class WindController extends GridPane implements Initializable, ControlledScreen {
+public class GlacierController extends GridPane implements Initializable, ControlledScreen {
     private String emptyFields;
 
     private ScreensController controller;
@@ -63,23 +64,13 @@ public class WindController extends GridPane implements Initializable, Controlle
     @FXML
     private RadioButton smCNo;
     @FXML
-    private TextField fanDepth;
-    @FXML
-    private TextField slopeDepth;
+    private TextField wellDepth;
     @FXML
     private TextField mpTemp;
     @FXML
     private TextField mpCond;
     @FXML
     private TextField mpPh;
-    @FXML
-    private TextField culv1;
-    @FXML
-    private TextField culv2;
-    @FXML
-    private TextField culv3;
-    @FXML
-    private TextField culvAvg;
 
     @FXML
     public void pressButton() throws Exception {
@@ -96,98 +87,83 @@ public class WindController extends GridPane implements Initializable, Controlle
                 Iterator<Cell> cellIterator = row.cellIterator();
                 while (cellIterator.hasNext()) {
                     Cell curCell = cellIterator.next();
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindArrivTime")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierArrivTime")) {
                         curCell.setCellValue(this.timeOfArrivalFld.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindDistIn")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierDistIn")) {
                         curCell.setCellValue(this.distInside.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindDistOut")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierDistOut")) {
                         curCell.setCellValue(this.distOutside.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindDistStaff")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierStaff")) {
                         curCell.setCellValue(this.distStaff.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindStage")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierStage")) {
                         curCell.setCellValue(this.stage.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindNotes")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierNotes")) {
                         curCell.setCellValue(this.siteNotesFld.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindRGLevel")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierRGLevel")) {
                         if (rg1LevelYes.isSelected()) {
                             curCell.setCellValue("Yes");
                         } else {
                             curCell.setCellValue("No");
                         }
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("wSMA")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("gSMA")) {
                         if (smAYes.isSelected()) {
                             curCell.setCellValue("Yes");
                         } else {
                             curCell.setCellValue("No");
                         }
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("wSMB")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("gSMB")) {
                         if (smBYes.isSelected()) {
                             curCell.setCellValue("Yes");
                         } else {
                             curCell.setCellValue("No");
                         }
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("wSMC")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("gSMC")) {
                         if (smCYes.isSelected()) {
                             curCell.setCellValue("Yes");
                         } else {
                             curCell.setCellValue("No");
                         }
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindRGCond")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierRGCond")) {
                         curCell.setCellValue(this.rg1CondFld.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindRGBatt")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierRGBatt")) {
                         if (rg1battOK.isSelected()) {
                             curCell.setCellValue("Ok");
                         } else {
                             curCell.setCellValue("Dead");
                         }
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindCulvert1")) {
-                        curCell.setCellValue(culv1.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindCulvert2")) {
-                        curCell.setCellValue(culv2.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindCulvert3")) {
-                        curCell.setCellValue(culv3.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindCulvertAvg")) {
-                        curCell.setCellValue(culvAvg.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindRGNotes")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierRGNotes")) {
                         curCell.setCellValue(this.rg1NotesFld.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindFanDepth")) {
-                        curCell.setCellValue(fanDepth.getText());
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierWellDepth")) {
+                        curCell.setCellValue(wellDepth.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindSlopeDepth")) {
-                        curCell.setCellValue(slopeDepth.getText());
-                    }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindMPTemp")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierMPTemp")) {
                         curCell.setCellValue(mpTemp.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindMPCond")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierMPCond")) {
                         curCell.setCellValue(mpCond.getText());
                     }
-                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("WindMPPH")) {
+                    if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("GlacierMPPH")) {
                         curCell.setCellValue(mpPh.getText());
                     }
                 }
             }
             FileOutputStream fos = new FileOutputStream(Main.outputFile);
             Main.book.write(fos);
-            controller.loadScreen("longbranch", "LongBranch.fxml");
-            controller.setScreen("longbranch");
+            controller.loadScreen("gribble", "screens/SiteData.fxml");
+            controller.setScreen("gribble");
         }
     }
 
@@ -247,12 +223,8 @@ public class WindController extends GridPane implements Initializable, Controlle
             this.emptyFields = emptyFields + "Soil Moisture A\n";
             areFieldsEmpty = true;
         }
-        if (this.slopeDepth.getText().isEmpty()) {
-            this.emptyFields += "Slope Well\n";
-            areFieldsEmpty = true;
-        }
-        if (this.fanDepth.getText().isEmpty()) {
-            this.emptyFields += "Fan Well\n";
+        if (this.wellDepth.getText().isEmpty()) {
+            this.emptyFields += "Glacier 1 Well\n";
             areFieldsEmpty = true;
         }
         if (!(this.smBYes.isSelected() || this.smBNo.isSelected())) {
@@ -275,18 +247,6 @@ public class WindController extends GridPane implements Initializable, Controlle
             this.emptyFields += "Multiprobe - PH\n";
             areFieldsEmpty = true;
         }
-        if (this.culv1.getText().isEmpty()) {
-            this.emptyFields += "Time To Fill 1\n";
-            areFieldsEmpty = true;
-        }
-        if (this.culv2.getText().isEmpty()) {
-            this.emptyFields += "Time To Fill 2\n";
-            areFieldsEmpty = true;
-        }
-        if (this.culv3.getText().isEmpty()) {
-            this.emptyFields += "Time To Fill 3\n";
-            areFieldsEmpty = true;
-        }
         if (this.siteNotesFld.getText().isEmpty()) {
             this.emptyFields += "SiteNotes\n";
             areFieldsEmpty = true;
@@ -302,42 +262,6 @@ public class WindController extends GridPane implements Initializable, Controlle
         this.timeOfArrivalFld.setText(getCurrentTime());
         this.timeOfArrivalFld.setDisable(true);
         this.timeOfArrivalFld.setEditable(false);
-        this.culv1.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    try {
-                        culvAvg.setText("" + ((Double.parseDouble(culv1.getText()) + Double.parseDouble(culv2.getText()) + Double.parseDouble(culv3.getText())) / 3));
-                    } catch (NumberFormatException nfe) {
-                        System.out.println("");
-                    }
-                }
-            }
-        });
-        this.culv2.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    try {
-                        culvAvg.setText("" + ((Double.parseDouble(culv1.getText()) + Double.parseDouble(culv2.getText()) + Double.parseDouble(culv3.getText())) / 3));
-                    } catch (NumberFormatException nfe) {
-                        System.out.println("");
-                    }
-                }
-            }
-        });
-        this.culv3.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
-                    try {
-                        culvAvg.setText("" + ((Double.parseDouble(culv1.getText()) + Double.parseDouble(culv2.getText()) + Double.parseDouble(culv3.getText())) / 3));
-                    } catch (NumberFormatException nfe) {
-                        System.out.println("");
-                    }
-                }
-            }
-        });
     }
 
     public String getCurrentTime() {

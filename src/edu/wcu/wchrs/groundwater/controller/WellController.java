@@ -1,5 +1,8 @@
-package edu.wcu.wchrs.groundwater;
+package edu.wcu.wchrs.groundwater.controller;
 
+import edu.wcu.wchrs.groundwater.ControlledScreen;
+import edu.wcu.wchrs.groundwater.Main;
+import edu.wcu.wchrs.groundwater.ScreensController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -391,7 +394,7 @@ public class WellController extends GridPane implements Initializable, Controlle
             }
             FileOutputStream fos = new FileOutputStream(Main.outputFile);
             Main.book.write(fos);
-            controller.loadScreen("wind", "Wind.fxml");
+            controller.loadScreen("wind", "screens/Wind.fxml");
             this.controller.setScreen("wind");
         }
     }

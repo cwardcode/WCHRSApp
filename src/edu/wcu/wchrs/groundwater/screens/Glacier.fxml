@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.*?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
-          fx:controller="edu.wcu.wchrs.groundwater.GlacierController">
+          fx:controller="edu.wcu.wchrs.groundwater.controller.GlacierController">
     <columnConstraints>
         <ColumnConstraints/>
     </columnConstraints>

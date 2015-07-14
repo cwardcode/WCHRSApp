@@ -1,5 +1,8 @@
-package edu.wcu.wchrs.groundwater;
+package edu.wcu.wchrs.groundwater.controller;
 
+import edu.wcu.wchrs.groundwater.ControlledScreen;
+import edu.wcu.wchrs.groundwater.Main;
+import edu.wcu.wchrs.groundwater.ScreensController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -73,7 +76,7 @@ public class LongBranchController extends GridPane implements Initializable, Con
             }
             FileOutputStream fos = new FileOutputStream(Main.outputFile);
             Main.book.write(fos);
-            controller.loadScreen("longbranchwells", "LongBranchWell.fxml");
+            controller.loadScreen("longbranchwells", "screens/LongBranchWell.fxml");
             controller.setScreen("longbranchwells");
         }
     }

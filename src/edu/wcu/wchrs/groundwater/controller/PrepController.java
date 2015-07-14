@@ -1,5 +1,8 @@
-package edu.wcu.wchrs.groundwater;
+package edu.wcu.wchrs.groundwater.controller;
 
+import edu.wcu.wchrs.groundwater.ControlledScreen;
+import edu.wcu.wchrs.groundwater.Main;
+import edu.wcu.wchrs.groundwater.ScreensController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -76,7 +79,7 @@ public class PrepController extends GridPane implements Initializable, Controlle
         FileOutputStream fos = new FileOutputStream(Main.outputFile);
         Main.book.write(fos);
         System.out.println("Written to: " + Main.outputFile.getAbsolutePath());
-        myController.loadScreen("glacier", "Glacier.fxml");
+        myController.loadScreen("glacier", "screens/Glacier.fxml");
         myController.setScreen("glacier");
     }
   }

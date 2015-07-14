@@ -1,18 +1,24 @@
- package edu.wcu.wchrs.groundwater;
- 
- import java.net.URL;
- import java.util.ResourceBundle;
+package edu.wcu.wchrs.groundwater.controller;
+
+import edu.wcu.wchrs.groundwater.ControlledScreen;
+import edu.wcu.wchrs.groundwater.Main;
+import edu.wcu.wchrs.groundwater.ScreensController;
  import javafx.fxml.FXML;
  import javafx.fxml.Initializable;
  import javafx.scene.control.Alert;
  import javafx.scene.control.CheckBox;
  import javafx.scene.layout.GridPane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
  
  
  public class EquipController
    extends GridPane
    implements Initializable, ControlledScreen
  {
+   String emptyFields;
+   ScreensController controller;
    @FXML
    private CheckBox bucket;
    @FXML
@@ -25,9 +31,6 @@
    private CheckBox pen;
    @FXML
    private CheckBox atomic;
-
-   String emptyFields;
-   ScreensController controller;
    
    public void setScreenParent(ScreensController screenPage)
    {
