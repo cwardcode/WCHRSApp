@@ -23,13 +23,13 @@
                 <CheckBox fx:id="ruler" layoutX="207.0" layoutY="190.0" mnemonicParsing="false" text="Folding Ruler" />
                 <CheckBox fx:id="tape" layoutX="207.0" layoutY="218.0" mnemonicParsing="false" text="Water Level Tape" />
                 <CheckBox fx:id="key" layoutX="207.0" layoutY="246.0" mnemonicParsing="false" text="Well Key" />
-                <CheckBox fx:id="pen" layoutX="208.0" layoutY="275.0" mnemonicParsing="false" text="Pen to write with" />
                 <Label alignment="CENTER" layoutX="143.0" layoutY="68.0" text="Equipment Checklist" textAlignment="CENTER">
                    <font>
                       <Font size="26.0" />
                    </font>
                 </Label>
-                <Button layoutX="238.0" layoutY="319.0" mnemonicParsing="false" onAction="#pressButton" text="Continue" />
+                <Button layoutX="238.0" layoutY="299.0" mnemonicParsing="false" onAction="#pressButton"
+                        text="Continue"/>
             </children>
         </Pane>
     </children>

@@ -3,11 +3,11 @@ package edu.wcu.wchrs.groundwater.controller;
 import edu.wcu.wchrs.groundwater.ControlledScreen;
 import edu.wcu.wchrs.groundwater.Main;
 import edu.wcu.wchrs.groundwater.ScreensController;
- import javafx.fxml.FXML;
- import javafx.fxml.Initializable;
- import javafx.scene.control.Alert;
- import javafx.scene.control.CheckBox;
- import javafx.scene.layout.GridPane;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
+import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,8 +27,6 @@ import java.util.ResourceBundle;
    private CheckBox key;
    @FXML
    private CheckBox ruler;
-   @FXML
-   private CheckBox pen;
    @FXML
    private CheckBox atomic;
    
@@ -80,11 +78,7 @@ import java.util.ResourceBundle;
        this.emptyFields += "Well Key\n";
        areFieldsEmpty = true;
      }
-     if (!this.pen.isSelected()) {
-       this.emptyFields += "Pen\n";
-       areFieldsEmpty = true;
-     }
-     
+
      return areFieldsEmpty;
    }
  }

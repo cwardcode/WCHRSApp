@@ -1,15 +1,18 @@
 <component name="ArtifactManager">
   <artifact type="javafx" name="WCHRSApp">
     <output-path>$PROJECT_DIR$/out/artifacts/WCHRSApp</output-path>
+    <properties id="ant-preprocessing">
+      <options enabled="true" />
+    </properties>
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="edu.wcu.wchrs.groundwater.Main" />
-        <option name="description" value="An app designed for making weekly round collection easier and more complete." />
+        <option name="description" value="An app designed for making weekly round data collection faster and more complete.&#10;&#10;Any questions or support, please email chris@cwardcode.com." />
         <option name="htmlParamFile" value="" />
         <option name="nativeBundle" value="all" />
         <option name="paramFile" value="" />
         <option name="title" value="WCHRS Groundwater App" />
-        <option name="vendor" value="" />
+        <option name="vendor" value="Chris Ward" />
       </options>
     </properties>
     <root id="root">

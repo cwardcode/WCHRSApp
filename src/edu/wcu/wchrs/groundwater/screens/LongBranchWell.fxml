@@ -41,8 +41,8 @@
                     <children>
                         <TextField fx:id="lb1SFld" layoutX="121.0" layoutY="63.0" GridPane.columnIndex="1"
                                    GridPane.rowIndex="1"/>
-                        <TextField fx:id="lb1IFld" layoutX="121.0" layoutY="95.0" GridPane.columnIndex="1"
-                                   GridPane.rowIndex="2"/>
+                        <TextField fx:id="lb1IFld" disable="true" editable="false" layoutX="121.0" layoutY="95.0"
+                                   promptText="Logger" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                         <TextField fx:id="lb1SHist" disable="true" editable="false" layoutX="321.0" layoutY="63.0"
                                    prefHeight="31.0" prefWidth="122.0" text="1.5 - 2.8" GridPane.columnIndex="2"
                                    GridPane.halignment="CENTER" GridPane.rowIndex="1"/>

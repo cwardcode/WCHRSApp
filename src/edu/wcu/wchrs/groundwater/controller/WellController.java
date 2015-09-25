@@ -407,10 +407,12 @@ public class WellController extends GridPane implements Initializable, Controlle
             emptyFields = emptyFields + "GG1S\n";
             areFieldsEmpty = true;
         }
+        /**
+         TODO: uncomment if gg1I is ever reinstated
         if(this.gg1IFld.getText().isEmpty()) {
             emptyFields = emptyFields + "GG1I\n";
             areFieldsEmpty = true;
-        }
+         }*/
 
         if(this.gg1DFld.getText().isEmpty()) {
             emptyFields = emptyFields + "GG1D\n";

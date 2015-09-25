@@ -393,10 +393,13 @@ public class LongBranchWellController extends GridPane implements Initializable,
             emptyFields = emptyFields + "LB1S\n";
             areFieldsEmpty = true;
         }
+        /**
+         TODO: uncomment if lb1I is reinstated
         if (this.lb1IFld.getText().isEmpty()) {
             emptyFields = emptyFields + "LB1I\n";
             areFieldsEmpty = true;
         }
+         */
 
         if (this.lb1DFld.getText().isEmpty()) {
             emptyFields = emptyFields + "LB1D\n";

@@ -1,5 +1,11 @@
 package edu.wcu.wchrs.groundwater.controller;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import edu.wcu.wchrs.groundwater.ControlledScreen;
 import edu.wcu.wchrs.groundwater.Main;
 import edu.wcu.wchrs.groundwater.ScreensController;
@@ -385,6 +391,11 @@ public class CullowheeCreekWellController extends GridPane implements Initializa
     @FXML
     public void pressButton()
             throws Exception {
+        Document pdf = new Document(PageSize.LETTER.rotate());
+        PdfWriter.getInstance(pdf, new FileOutputStream("C:\\users\\" + Main.username + "\\desktop\\test.pdf"));
+        pdf.open();
+        PdfPTable table = new PdfPTable(7);
+        PdfPCell tcell;
         if (emptyFieldsExist()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error: Empty Fields");
@@ -458,10 +469,35 @@ public class CullowheeCreekWellController extends GridPane implements Initializa
                     if (curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("CCWellNotes")) {
                         curCell.setCellValue(this.wellNotesFld.getText());
                     }
+                    switch (curCell.getCellType()) {
+                        case Cell.CELL_TYPE_STRING:
+                            tcell = new PdfPCell(new Phrase(curCell.getStringCellValue()));
+                            table.addCell(tcell);
+                            break;
+                        case Cell.CELL_TYPE_NUMERIC:
+                            tcell = new PdfPCell(new Phrase(curCell.getNumericCellValue() + ""));
+                            table.addCell(tcell);
+                            break;
+                        case Cell.CELL_TYPE_BOOLEAN:
+                            tcell = new PdfPCell(new Phrase(curCell.getBooleanCellValue() + ""));
+                            table.addCell(tcell);
+                            break;
+                        case Cell.CELL_TYPE_BLANK:
+                            tcell = new PdfPCell((new Phrase("")));
+                            table.addCell(tcell);
+                            break;
+                        default:
+                            tcell = new PdfPCell(new Phrase(curCell.getStringCellValue()));
+                            table.addCell(tcell);
+                            break;
+                    }
                 }
             }
+            pdf.add(table);
+            pdf.close();
             FileOutputStream fos = new FileOutputStream(Main.outputFile);
             Main.book.write(fos);
+
             this.controller.setScreen(Main.screen1ID);
         }
     }
@@ -473,19 +509,25 @@ public class CullowheeCreekWellController extends GridPane implements Initializa
             emptyFields = emptyFields + "CC1S\n";
             areFieldsEmpty = true;
         }
+        /**
+         TODO: Uncomment if well is reinstated
         if (this.CC1IFld.getText().isEmpty()) {
             emptyFields = emptyFields + "CC1I\n";
             areFieldsEmpty = true;
         }
+         */
 
         if (this.CC1I2Fld.getText().isEmpty()) {
             emptyFields = emptyFields + "CC1I2\n";
             areFieldsEmpty = true;
         }
+        /**
+         TODO: Uncomment if well is reinstated
         if (this.CC1DFld.getText().isEmpty()) {
             emptyFields = emptyFields + "CC1D\n";
             areFieldsEmpty = true;
         }
+         */
         if (this.CC1D2Fld.getText().isEmpty()) {
             emptyFields = emptyFields + "CC1D2\n";
             areFieldsEmpty = true;

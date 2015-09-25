@@ -6,6 +6,7 @@
       <root url="jar://$PROJECT_DIR$/libraries/xmlbeans-2.6.0.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/poi-bin-3.12-20150511/poi-3.12/poi-ooxml-schemas-3.12-20150511.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/commons-io-2.4.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/itextpdf-5.5.6.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -46,15 +46,15 @@
                     <children>
                         <TextField fx:id="CC1SFld" layoutX="121.0" layoutY="63.0" GridPane.columnIndex="1"
                                    GridPane.rowIndex="1"/>
-                        <TextField fx:id="CC1IFld" layoutX="121.0" layoutY="95.0" GridPane.columnIndex="1"
-                                   GridPane.rowIndex="2"/>
+                        <TextField fx:id="CC1IFld" disable="true" editable="false" layoutX="121.0" layoutY="95.0"
+                                   promptText="Logger" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                         <TextField fx:id="CC1SHist" disable="true" editable="false" layoutX="321.0" layoutY="63.0"
                                    prefHeight="31.0" prefWidth="122.0" text="1.3 - 1.9" GridPane.columnIndex="2"
                                    GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
                         <TextField fx:id="CC1I2Fld" layoutX="121.0" layoutY="127.0" GridPane.columnIndex="1"
                                    GridPane.rowIndex="3"/>
-                        <TextField fx:id="CC1DFld" layoutX="121.0" layoutY="159.0" GridPane.columnIndex="1"
-                                   GridPane.rowIndex="4"/>
+                        <TextField fx:id="CC1DFld" disable="true" editable="false" layoutX="121.0" layoutY="159.0"
+                                   promptText="Logger" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
                         <TextField fx:id="CC1D2Fld" layoutX="121.0" layoutY="191.0" GridPane.columnIndex="1"
                                    GridPane.rowIndex="5"/>
                         <TextField fx:id="CC2SFld" layoutX="121.0" layoutY="223.0" GridPane.columnIndex="1"

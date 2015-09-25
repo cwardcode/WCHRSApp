@@ -29,7 +29,7 @@ public class Main extends javafx.application.Application {
     public static FileInputStream stream;
     public static XSSFWorkbook book;
     public static XSSFSheet sheet;
-    private static String username;
+    public static String username;
     private static String osName;
 
     public static void main(String[] args) {
@@ -64,8 +64,7 @@ public class Main extends javafx.application.Application {
         screens.loadScreen(screen1ID, screen1File);
         screens.loadScreen(screen2ID, screen2File);
         screens.loadScreen(screen4ID, screen4File);
-        screens.loadScreen("wind", "screens/Wind.fxml");
-        screens.setScreen("wind");
+        screens.setScreen(screen1ID);
 
         Group root = new Group();
         root.getChildren().addAll(screens);
